@@ -94,7 +94,12 @@
              ]
         },
         "function-modifiers": {
-
+            "patterns": [
+                {
+                    "match": "\\b(abstract|final|open|override|inline)\\b",
+                    "name": "storage.modifier.kotlin"   
+                }
+            ]
         },
         "types": {
             "patterns": [
@@ -116,6 +121,16 @@
             "patterns": [
                 {
                     "include": "#functions"
+                },
+                { 
+                    "include": "#fields" 
+                }
+            ]
+        },
+        "fields": {
+            "patterns": [
+                {
+
                 }
             ]
         },
@@ -125,6 +140,9 @@
             "patterns": [
                 {
                     "include": "#scope-modifiers"
+                },
+                {
+                    "include": "#function-modifiers"
                 },
                 {
                     "captures": {
@@ -299,6 +317,10 @@
         },
         "keywords": {
             "patterns": [
+                {
+                    "match": "\\b(var|val)\\b", 
+                    "name": "keyword.operator.assignment.kotlin"
+                },
                 {
                     "match": "\\b(try|catch|finally|throw)\\b", 
                     "name": "keyword.control.catch-exception.kotlin"
