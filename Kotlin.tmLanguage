@@ -68,6 +68,10 @@
 					<key>include</key>
 					<string>#functions</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fields</string>
+				</dict>
 			</array>
 		</dict>
 		<key>comments</key>
@@ -147,13 +151,21 @@
 				</dict>
 			</array>
 		</dict>
+		<key>fields</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+				</dict>
+			</array>
+		</dict>
 		<key>function-modifiers</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(abstract|final|open|override)\b</string>
+					<string>\b(abstract|final|open|override|inline)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
 				</dict>
@@ -465,6 +477,12 @@
 					<string>string.quoted.double.kotlin</string>
 					<key>patterns</key>
 					<array>
+						<dict>
+							<key>match</key>
+							<string>\$(?=\{[^\}]+\})</string>
+							<key>name</key>
+							<string>constant.other.kotlin</string>
+						</dict>
 						<dict>
 							<key>match</key>
 							<string>\\.</string>

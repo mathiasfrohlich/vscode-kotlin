@@ -262,6 +262,10 @@
                     "name": "string.quoted.double.kotlin", 
                     "patterns": [
                         {
+                            "match": "\\$(?=\\{[^\\}]+\\})",
+                            "name": "constant.other.kotlin"
+                        },
+                        {
                             "match": "\\\\.", 
                             "name": "constant.character.escape.kotlin"
                         }
