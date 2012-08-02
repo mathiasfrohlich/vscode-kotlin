@@ -77,10 +77,18 @@
                 }
             ]
         },
+        "scope-modifiers": {
+            "patterns": [
+                {
+                    "match": "\\b(public|private|protected)\\b",
+                    "name": "storage.modifier.kotlin"
+                }
+            ]
+        },
         "class-modifiers": {
             "patterns": [
                 {
-                    "match": "\\b(abstract|final|enum|open|attribute|override|public|private|protected)\\b",
+                    "match": "\\b(abstract|final|enum|open|attribute|override)\\b",
                     "name": "storage.modifier.kotlin"
                 }
              ]
@@ -112,17 +120,23 @@
             ]
         },
         "functions": {
-            "begin": "\\s*(fun)\\s+([^\\s\\(]+)",
-            "beginCaptures": {
-                "1": {
-                    "name": "keyword.other.kotlin"
-                }, 
-                "2": {
-                    "name": "entity.name.function.kotlin"
-                }
-            },
+            "begin": "(?=\\w?[\\w\\s]*(?:fun)\\s+([^\\s\\(]+))",
             "end": "(?=}|$)",
             "patterns": [
+                {
+                    "include": "#scope-modifiers"
+                },
+                {
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.kotlin"
+                        }, 
+                        "2": {
+                            "name": "entity.name.function.kotlin"
+                        }
+                    },
+                    "match": "(fun)\\s+([^\\s\\(]+)"
+                },
                 {
                     "begin": "\\(", 
                     "end": "\\)", 

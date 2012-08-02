@@ -54,7 +54,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(abstract|final|enum|open|attribute|override|public|private|protected)\b</string>
+					<string>\b(abstract|final|enum|open|attribute|override)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
 				</dict>
@@ -153,24 +153,32 @@
 		<key>functions</key>
 		<dict>
 			<key>begin</key>
-			<string>\s*(fun)\s+([^\s\(]+)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.other.kotlin</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.kotlin</string>
-				</dict>
-			</dict>
+			<string>(?=\w?[\w\s]*(?:fun)\s+([^\s\(]+))</string>
 			<key>end</key>
 			<string>(?=}|$)</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#scope-modifiers</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.kotlin</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.kotlin</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(fun)\s+([^\s\(]+)</string>
+				</dict>
 				<dict>
 					<key>begin</key>
 					<string>\(</string>
@@ -372,6 +380,18 @@
 							<string>#types</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>scope-modifiers</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(public|private|protected)\b</string>
+					<key>name</key>
+					<string>storage.modifier.kotlin</string>
 				</dict>
 			</array>
 		</dict>
