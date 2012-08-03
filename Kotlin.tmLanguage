@@ -45,6 +45,10 @@
 			<key>include</key>
 			<string>#functions</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#variables</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -159,7 +163,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#fields</string>
+							<string>#variables</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -230,20 +234,6 @@
 					<key>name</key>
 					<string>constant.numeric.kotlin</string>
 				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.dereference.kotlin</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(\.)?\b([A-Z][A-Z0-9_]+)(?!&lt;|\.class|\s*\w+\s*=)\b</string>
-					<key>name</key>
-					<string>constant.other.kotlin</string>
-				</dict>
 			</array>
 		</dict>
 		<key>field-modifiers</key>
@@ -255,55 +245,6 @@
 					<string>\b(override|open)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
-				</dict>
-			</array>
-		</dict>
-		<key>fields</key>
-		<dict>
-			<key>begin</key>
-			<string>(?=\w?[\w\s]*(?:var|val))</string>
-			<key>end</key>
-			<string>(?=$)</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#scope-modifiers</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#field-modifiers</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.other.kotlin</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable.language.kotlin</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(var|val)\s+(\w+)</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#types</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#statements</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>get\(\)</string>
-					<key>name</key>
-					<string>keyword.other.kotlin</string>
 				</dict>
 			</array>
 		</dict>
@@ -755,6 +696,55 @@
 					<string>\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array|Array&lt;.[^&gt;]&gt;)\b</string>
 					<key>name</key>
 					<string>storage.type.buildin.kotlin</string>
+				</dict>
+			</array>
+		</dict>
+		<key>variables</key>
+		<dict>
+			<key>begin</key>
+			<string>(?=\w?[\w\s]*(?:var|val))</string>
+			<key>end</key>
+			<string>(?=$)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#scope-modifiers</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#field-modifiers</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.kotlin</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.language.kotlin</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(var|val)\s+(\w+)</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#types</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#statements</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>get\(\)</string>
+					<key>name</key>
+					<string>keyword.other.kotlin</string>
 				</dict>
 			</array>
 		</dict>

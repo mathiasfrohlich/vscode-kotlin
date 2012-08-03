@@ -24,6 +24,9 @@
         },
         {
             "include": "#functions"
+        },
+        {
+            "include": "#variables"
         }
     ],
     "repository": {
@@ -180,7 +183,7 @@
                             "include": "#functions"
                         },
                         {
-                            "include": "#fields" 
+                            "include": "#variables" 
                         },
                         { 
                             "include": "#statements" 
@@ -189,7 +192,7 @@
                 }
             ]
         },
-        "fields": {
+        "variables": {
             "begin": "(?=\\w?[\\w\\s]*(?:var|val))",
             "end": "(?=$)",
             "patterns": [
@@ -436,15 +439,6 @@
                 {
                     "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\\b", 
                     "name": "constant.numeric.kotlin"
-                }, 
-                {
-                    "captures": {
-                        "1": {
-                            "name": "keyword.operator.dereference.kotlin"
-                        }
-                    }, 
-                    "match": "(\\.)?\\b([A-Z][A-Z0-9_]+)(?!<|\\.class|\\s*\\w+\\s*=)\\b", 
-                    "name": "constant.other.kotlin"
                 }
             ]
         },
