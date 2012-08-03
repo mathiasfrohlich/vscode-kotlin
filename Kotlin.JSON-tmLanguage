@@ -67,16 +67,6 @@
                 }
             ]
         },
-        "modifiers": {
-            "patterns": [
-                { 
-                    "include": "#class-modifiers" 
-                },
-                { 
-                    "include": "#function-modifiers" 
-                }
-            ]
-        },
         "scope-modifiers": {
             "patterns": [
                 {
@@ -88,7 +78,7 @@
         "class-modifiers": {
             "patterns": [
                 {
-                    "match": "\\b(abstract|final|enum|open|attribute|override)\\b",
+                    "match": "\\b(abstract|final|enum|open|attribute|annotation)\\b",
                     "name": "storage.modifier.kotlin"
                 }
              ]
@@ -101,6 +91,22 @@
                 }
             ]
         },
+        "param-modifiers": {
+            "patterns": [
+                {
+                    "match": "\\b(var|val|vararg)\\b",
+                    "name": "storage.modifier.kotlin"
+                }
+            ]
+        },
+        "field-modifiers": {
+            "patterns": [
+                {
+                    "match": "\\b(override)\\b",
+                    "name": "storage.modifier.kotlin"
+                }
+            ]
+        },
         "types": {
             "patterns": [
                 {
@@ -109,17 +115,9 @@
                 }
             ]
         },
-        "var-modifiers": {
-            "patterns": [
-                {
-                    "match": "\\b(var|val|vararg)\\b",
-                    "name": "storage.type.dynamic.kotlin"
-                }
-            ]
-        },
         "classes": {
             "begin": "(?=\\w?[\\w\\s]*(?:class|object|trait)\\s+([^\\s\\(]+))",
-            "end": "(?=}|$)",
+            "end": "}",
             "patterns": [
                 {
                     "include": "#scope-modifiers"
@@ -159,9 +157,31 @@
             ]
         },
         "fields": {
+            "begin": "(?=\\w?[\\w\\s]*(?:var|val))",
+            "end": "$",
             "patterns": [
                 {
-
+                    "include": "#scope-modifiers"
+                },
+                {
+                    "include": "#field-modifiers"
+                },
+                {
+                    "captures": {
+                        "1": { 
+                            "name": "keyword.other.kotlin" 
+                        },
+                        "2": {
+                            "name": "variable.language.kotlin"
+                        }
+                    },
+                    "match": "(var|val)\\s+(\\w+)"
+                },
+                { 
+                    "include": "#types"
+                },
+                {
+                    "include": "#statements"
                 }
             ]
         },
@@ -237,7 +257,7 @@
         "parameters": {
             "patterns": [
                 {
-                    "include": "#var-modifiers"
+                    "include": "#param-modifiers"
                 },
                 {
                     "match": "\\w+",
@@ -250,10 +270,24 @@
                             "name": "keyword.operator.declaration.kotlin"
                         }
                     },
-                    "end": "(?=,|\\))", 
+                    "end": "(?=,|\\)|=)", 
                     "patterns": [
                         {
                             "include": "#types"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(=)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.assignment.kotlin"
+                        }
+                    },
+                    "end": "(?=,|\\))", 
+                    "patterns": [
+                        {
+                            "include": "#statements"
                         }
                     ]
                 }
@@ -268,10 +302,10 @@
                     "include": "#constants"
                 },
                 {
-                    "include": "#keywords"
+                    "include": "#types"
                 },
                 {
-                    "include": "#types"
+                    "include": "#keywords"
                 }
             ]
         },
