@@ -91,7 +91,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(class|object|trait)\s+([^\s\(:]+)</string>
+					<string>(class|object|trait)\s+(\w+)</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -122,7 +122,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>{</string>
+					<string>(?={)</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -147,16 +147,25 @@
 					</array>
 				</dict>
 				<dict>
-					<key>include</key>
-					<string>#functions</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#fields</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#statements</string>
+					<key>begin</key>
+					<string>{</string>
+					<key>end</key>
+					<string>(?=})</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#functions</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#fields</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#statements</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>

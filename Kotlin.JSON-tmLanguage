@@ -134,7 +134,7 @@
                             "name": "entity.name.type.class.kotlin"
                         }
                     },
-                    "match": "(class|object|trait)\\s+([^\\s\\(:]+)"
+                    "match": "(class|object|trait)\\s+(\\w+)"
                 },
                 {
                     "begin": "\\(", 
@@ -155,7 +155,7 @@
                             "name": "keyword.operator.declaration.kotlin"
                         }
                     },
-                    "end": "{",
+                    "end": "(?={)",
                     "patterns": [
                         {
                             "match": "\\w+",
@@ -173,13 +173,19 @@
                     ]
                 },
                 {
-                    "include": "#functions"
-                },
-                { 
-                    "include": "#fields" 
-                },
-                { 
-                    "include": "#statements" 
+                    "begin": "{",
+                    "end": "(?=})",
+                    "patterns": [
+                        {
+                            "include": "#functions"
+                        },
+                        {
+                            "include": "#fields" 
+                        },
+                        { 
+                            "include": "#statements" 
+                        }
+                    ]
                 }
             ]
         },
