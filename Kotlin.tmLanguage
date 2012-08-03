@@ -469,7 +469,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(in|is)\b</string>
+					<string>\b(in|is|as)\b</string>
 					<key>name</key>
 					<string>keyword.operator.kotlin</string>
 				</dict>

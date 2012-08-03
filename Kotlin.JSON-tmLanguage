@@ -463,7 +463,7 @@
                     "name": "keyword.control.kotlin"
                 },
                 {
-                    "match": "\\b(in|is)\\b", 
+                    "match": "\\b(in|is|as)\\b", 
                     "name": "keyword.operator.kotlin"
                 },
                 {
