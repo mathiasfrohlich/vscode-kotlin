@@ -27,7 +27,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>storage.modifier.kotlin</string>
+					<string>entity.name.package.kotlin</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -87,7 +87,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.class.kotlin</string>
+							<string>entity.name.type.class.kotlin</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -392,11 +392,11 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>storage.modifier.kotlin</string>
+							<string>keyword.other.kotlin</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\s*(import)\b(?:\s*([^ $]+))?</string>
+					<string>^\s*(import)\s+[^ $]+\s+(as)?</string>
 				</dict>
 			</array>
 		</dict>
@@ -526,8 +526,25 @@
 					</array>
 				</dict>
 				<dict>
-					<key>include</key>
-					<string>#statements</string>
+					<key>begin</key>
+					<string>(=)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.declaration.kotlin</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=,|\))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#statements</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -666,7 +683,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array(?=&lt;.*&gt;))\b</string>
+					<string>\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array|Array&lt;.[^&gt;]&gt;)\b</string>
 					<key>name</key>
 					<string>storage.type.buildin.kotlin</string>
 				</dict>

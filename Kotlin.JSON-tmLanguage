@@ -11,7 +11,7 @@
                     "name": "keyword.other.kotlin"
                 }, 
                 "2": {
-                    "name": "storage.modifier.kotlin"
+                    "name": "entity.name.package.kotlin"
                 }
             }, 
             "match": "^\\s*(package)\\b(?:\\s*([^ ;$]+)\\s*)?"
@@ -60,10 +60,10 @@
                             "name": "keyword.other.kotlin"
                         },
                         "2": {
-                            "name": "storage.modifier.kotlin"
+                            "name": "keyword.other.kotlin"
                         }
                 },
-                "match": "^\\s*(import)\\b(?:\\s*([^ $]+))?"
+                "match": "^\\s*(import)\\s+[^ $]+\\s+(as)?"
                 }
             ]
         },
@@ -110,7 +110,7 @@
         "types": {
             "patterns": [
                 {
-                    "match": "\\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array(?=<.*>))\\b", 
+                    "match": "\\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array|Array<.[^>]>)\\b", 
                     "name": "storage.type.buildin.kotlin"
                 }
             ]
@@ -131,7 +131,7 @@
                             "name": "keyword.other.kotlin"
                         }, 
                         "2": {
-                            "name": "entity.name.class.kotlin"
+                            "name": "entity.name.type.class.kotlin"
                         }
                     },
                     "match": "(class|object|trait)\\s+([^\\s\\(]+)"
@@ -285,7 +285,18 @@
                     ]
                 },
                 {
-                    "include" : "#statements"
+                    "begin": "(=)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.declaration.kotlin"
+                        }
+                    },
+                    "end": "(?=,|\\))",
+                    "patterns": [
+                        {
+                            "include" : "#statements"
+                        }
+                    ]
                 }
             ]
         },
