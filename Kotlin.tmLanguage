@@ -424,6 +424,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>\b(in|is)\b</string>
+					<key>name</key>
+					<string>keyword.operator.kotlin</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(==|!=|&lt;=|&gt;=|&lt;&gt;|&lt;|&gt;)</string>
 					<key>name</key>
 					<string>keyword.operator.comparison.kotlin</string>

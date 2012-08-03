@@ -407,6 +407,10 @@
                     "name": "keyword.control.kotlin"
                 },
                 {
+                    "match": "\\b(in|is)\\b", 
+                    "name": "keyword.operator.kotlin"
+                },
+                {
                     "match": "(==|!=|<=|>=|<>|<|>)", 
                     "name": "keyword.operator.comparison.kotlin"
                 }, 
