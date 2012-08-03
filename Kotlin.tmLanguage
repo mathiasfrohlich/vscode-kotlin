@@ -63,7 +63,7 @@
 		<key>classes</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w?[\w\s]*(?:class)\s+([^\s\(]+))</string>
+			<string>(?=\w?[\w\s]*(?:class|object|trait)\s+([^\s\(]+))</string>
 			<key>end</key>
 			<string>(?=}|$)</string>
 			<key>patterns</key>
@@ -91,7 +91,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(class)\s+([^\s\(]+)</string>
+					<string>(class|object|trait)\s+([^\s\(]+)</string>
 				</dict>
 				<dict>
 					<key>begin</key>

@@ -118,7 +118,7 @@
             ]
         },
         "classes": {
-            "begin": "(?=\\w?[\\w\\s]*(?:class)\\s+([^\\s\\(]+))",
+            "begin": "(?=\\w?[\\w\\s]*(?:class|object|trait)\\s+([^\\s\\(]+))",
             "end": "(?=}|$)",
             "patterns": [
                 {
@@ -136,7 +136,7 @@
                             "name": "entity.name.class.kotlin"
                         }
                     },
-                    "match": "(class)\\s+([^\\s\\(]+)"
+                    "match": "(class|object|trait)\\s+([^\\s\\(]+)"
                 },
                 {
                     "begin": "\\(", 
