@@ -62,8 +62,54 @@
 		</dict>
 		<key>classes</key>
 		<dict>
+			<key>begin</key>
+			<string>(?=\w?[\w\s]*(?:class)\s+([^\s\(]+))</string>
+			<key>end</key>
+			<string>(?=}|$)</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#scope-modifiers</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#class-modifiers</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.kotlin</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.kotlin</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(class)\s+([^\s\(]+)</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\(</string>
+					<key>end</key>
+					<string>\)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#scope-modifiers</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#parameters</string>
+						</dict>
+					</array>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#functions</string>

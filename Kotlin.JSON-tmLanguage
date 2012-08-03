@@ -118,7 +118,38 @@
             ]
         },
         "classes": {
+            "begin": "(?=\\w?[\\w\\s]*(?:class)\\s+([^\\s\\(]+))",
+            "end": "(?=}|$)",
             "patterns": [
+                {
+                    "include": "#scope-modifiers"
+                },
+                {
+                    "include": "#class-modifiers"
+                },
+                {
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.kotlin"
+                        }, 
+                        "2": {
+                            "name": "entity.name.class.kotlin"
+                        }
+                    },
+                    "match": "(class)\\s+([^\\s\\(]+)"
+                },
+                {
+                    "begin": "\\(", 
+                    "end": "\\)", 
+                    "patterns": [
+                        {
+                            "include": "#scope-modifiers"
+                        },
+                        {
+                            "include": "#parameters"
+                        }
+                    ]
+                },
                 {
                     "include": "#functions"
                 },
