@@ -284,7 +284,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#ex</string>
+							<string>#expressions</string>
 						</dict>
 					</array>
 				</dict>

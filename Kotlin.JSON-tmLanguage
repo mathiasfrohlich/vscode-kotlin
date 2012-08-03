@@ -166,7 +166,7 @@
                     "end": ">",
                     "patterns": [
                         { 
-                            "include": "#generic-modifiers" 
+                            "include": "#generic-modifiers"     
                         },
                         {
                             "match": "\\w+",
@@ -390,7 +390,7 @@
                     "end": "\\}",
                     "patterns": [
                         { 
-                            "include": "#ex" 
+                            "include": "#expressions" 
                         }
                     ]
                 }
