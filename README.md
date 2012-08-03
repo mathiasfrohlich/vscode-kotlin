@@ -13,4 +13,3 @@ TODO:
 * add IntArray
 * add class extending
 * add type converting (->)
-* add classes w/o body

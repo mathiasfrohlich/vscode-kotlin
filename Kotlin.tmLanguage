@@ -69,7 +69,7 @@
 			<key>begin</key>
 			<string>(?=\w?[\w\s]*(?:class|object|trait))</string>
 			<key>end</key>
-			<string>}</string>
+			<string>}|(?=$)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -126,7 +126,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?={)</string>
+					<string>(?={|$)</string>
 					<key>patterns</key>
 					<array>
 						<dict>
