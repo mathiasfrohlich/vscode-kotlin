@@ -134,7 +134,7 @@
                             "name": "entity.name.type.class.kotlin"
                         }
                     },
-                    "match": "(class|object|trait)\\s+([^\\s\\(]+)"
+                    "match": "(class|object|trait)\\s+([^\\s\\(:]+)"
                 },
                 {
                     "begin": "\\(", 
@@ -166,8 +166,7 @@
                             "end": "\\)",
                             "patterns": [
                                 {
-                                    "match": "\\w+",
-                                    "name": "variable.parameter.class.kotlin"
+                                    "include": "#statements"
                                 }
                             ]
                         }
@@ -180,7 +179,7 @@
                     "include": "#fields" 
                 },
                 { 
-                    "include": "#comments" 
+                    "include": "#statements" 
                 }
             ]
         },
