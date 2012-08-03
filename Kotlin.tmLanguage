@@ -236,18 +236,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>field-modifiers</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\b(override|open)\b</string>
-					<key>name</key>
-					<string>storage.modifier.kotlin</string>
-				</dict>
-			</array>
-		</dict>
 		<key>function-modifiers</key>
 		<dict>
 			<key>patterns</key>
@@ -470,7 +458,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(var|val|vararg)\b</string>
+					<string>\b(var|val|vararg|lazy|out|ref)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
 				</dict>
@@ -699,6 +687,18 @@
 				</dict>
 			</array>
 		</dict>
+		<key>variable-modifiers</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(override|open)\b</string>
+					<key>name</key>
+					<string>storage.modifier.kotlin</string>
+				</dict>
+			</array>
+		</dict>
 		<key>variables</key>
 		<dict>
 			<key>begin</key>
@@ -713,7 +713,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#field-modifiers</string>
+					<string>#variable-modifiers</string>
 				</dict>
 				<dict>
 					<key>captures</key>

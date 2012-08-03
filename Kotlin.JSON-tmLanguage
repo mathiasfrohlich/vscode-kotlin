@@ -97,12 +97,12 @@
         "param-modifiers": {
             "patterns": [
                 {
-                    "match": "\\b(var|val|vararg)\\b",
+                    "match": "\\b(var|val|vararg|lazy|out|ref)\\b",
                     "name": "storage.modifier.kotlin"
                 }
             ]
         },
-        "field-modifiers": {
+        "variable-modifiers": {
             "patterns": [
                 {
                     "match": "\\b(override|open)\\b",
@@ -200,7 +200,7 @@
                     "include": "#scope-modifiers"
                 },
                 {
-                    "include": "#field-modifiers"
+                    "include": "#variable-modifiers"
                 },
                 {
                     "captures": {

@@ -13,3 +13,8 @@ TODO:
 * add IntArray
 * add class extending
 * add type converting (->)
+* add namespace
+* add keywords: in,out
+* add annotations
+* add $fieldname, @labelname
+* add nested packages
