@@ -63,7 +63,7 @@
 		<key>classes</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w?[\w\s]*(?:class|object|trait)\s+([^\s\(]+))</string>
+			<string>(?=\w?[\w\s]*(?:class|object|trait))</string>
 			<key>end</key>
 			<string>}</string>
 			<key>patterns</key>
@@ -107,6 +107,44 @@
 						<dict>
 							<key>include</key>
 							<string>#parameters</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(:)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.declaration.kotlin</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>{</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\w+</string>
+							<key>name</key>
+							<string>entity.other.inherited-class.kotlin</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>\(</string>
+							<key>end</key>
+							<string>\)</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>\w+</string>
+									<key>name</key>
+									<string>variable.parameter.class.kotlin</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>

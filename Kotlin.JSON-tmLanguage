@@ -116,7 +116,7 @@
             ]
         },
         "classes": {
-            "begin": "(?=\\w?[\\w\\s]*(?:class|object|trait)\\s+([^\\s\\(]+))",
+            "begin": "(?=\\w?[\\w\\s]*(?:class|object|trait))",
             "end": "}",
             "patterns": [
                 {
@@ -145,6 +145,31 @@
                         },
                         {
                             "include": "#parameters"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(:)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.declaration.kotlin"
+                        }
+                    },
+                    "end": "{",
+                    "patterns": [
+                        {
+                            "match": "\\w+",
+                            "name": "entity.other.inherited-class.kotlin"
+                        },
+                        {
+                            "begin": "\\(",
+                            "end": "\\)",
+                            "patterns": [
+                                {
+                                    "match": "\\w+",
+                                    "name": "variable.parameter.class.kotlin"
+                                }
+                            ]
                         }
                     ]
                 },
