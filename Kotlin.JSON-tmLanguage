@@ -124,11 +124,11 @@
                     "begin": "<",
                     "end": ">",
                     "patterns": [
-                        { 
-                            "include": "#types" 
+                        {
+                            "match": "\\w+",
+                            "name": "storage.type.generic.kotlin"
                         }
-                    ],
-                    "name": "storage.type.generic.kotlin"
+                    ]
                 },
                 {
                     "match": "\\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array)\\b", 
@@ -169,7 +169,8 @@
                             "include": "#generic-modifiers" 
                         },
                         {
-                            "include": "#types"
+                            "match": "\\w+",
+                            "name": "storage.type.generic.kotlin"
                         }
                     ]
                 },
@@ -389,7 +390,7 @@
                     "end": "\\}",
                     "patterns": [
                         { 
-                            "include": "#expressions" 
+                            "include": "#ex" 
                         }
                     ]
                 }
