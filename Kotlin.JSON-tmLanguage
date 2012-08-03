@@ -153,12 +153,15 @@
                 },
                 { 
                     "include": "#fields" 
+                },
+                { 
+                    "include": "#comments" 
                 }
             ]
         },
         "fields": {
             "begin": "(?=\\w?[\\w\\s]*(?:var|val))",
-            "end": "$",
+            "end": "(?=$)",
             "patterns": [
                 {
                     "include": "#scope-modifiers"
@@ -182,6 +185,10 @@
                 },
                 {
                     "include": "#statements"
+                },
+                {
+                    "match": "get\\(\\)",
+                    "name": "keyword.other.kotlin"
                 }
             ]
         },
@@ -278,18 +285,7 @@
                     ]
                 },
                 {
-                    "begin": "(=)",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "keyword.operator.assignment.kotlin"
-                        }
-                    },
-                    "end": "(?=,|\\))", 
-                    "patterns": [
-                        {
-                            "include": "#statements"
-                        }
-                    ]
+                    "include" : "#statements"
                 }
             ]
         },
@@ -306,6 +302,18 @@
                 },
                 {
                     "include": "#keywords"
+                },
+                {
+                    "include": "#comments"
+                },
+                {
+                    "begin": "\\{",
+                    "end": "\\}",
+                    "patterns": [
+                        { 
+                            "include": "#statements" 
+                        }
+                    ]
                 }
             ]
         },
@@ -405,6 +413,10 @@
                 {
                     "match": "(=)", 
                     "name": "keyword.operator.assignment.kotlin"
+                },
+                {
+                    "match": "(:)", 
+                    "name": "keyword.operator.declaration.kotlin"
                 },
                 {
                     "match": "(\\.)", 

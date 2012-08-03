@@ -118,6 +118,10 @@
 					<key>include</key>
 					<string>#fields</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
 			</array>
 		</dict>
 		<key>comments</key>
@@ -214,7 +218,7 @@
 			<key>begin</key>
 			<string>(?=\w?[\w\s]*(?:var|val))</string>
 			<key>end</key>
-			<string>$</string>
+			<string>(?=$)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -249,6 +253,12 @@
 				<dict>
 					<key>include</key>
 					<string>#statements</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>get\(\)</string>
+					<key>name</key>
+					<string>keyword.other.kotlin</string>
 				</dict>
 			</array>
 		</dict>
@@ -426,6 +436,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>(:)</string>
+					<key>name</key>
+					<string>keyword.operator.declaration.kotlin</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(\.)</string>
 					<key>name</key>
 					<string>keyword.operator.dot.kotlin</string>
@@ -504,25 +520,8 @@
 					</array>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>(=)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.assignment.kotlin</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?=,|\))</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#statements</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#statements</string>
 				</dict>
 			</array>
 		</dict>
@@ -557,6 +556,23 @@
 				<dict>
 					<key>include</key>
 					<string>#keywords</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\{</string>
+					<key>end</key>
+					<string>\}</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#statements</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
