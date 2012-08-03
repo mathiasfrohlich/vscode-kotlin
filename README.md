@@ -1,9 +1,19 @@
 Kotlin Sublime Text 2 Package 
------------------------------
+=============================
 
-TODO:
+This is [Sumblime Text 2](http://www.sublimetext.com/) package for [Kotlin](http://jetbrains.com/kotlin) programming laguage.
 
-* add generics
+Overview
+--------
+
+The following things already implemented:
+
+* Kotlin Syntax Defenition <code>Kotlin.tmLanguage</code>
+
+TODO
+----
+
+* add generics (function, classes, types, inherits)
 * add properties (get/set)
 * add inner functions
 * add inner classes
@@ -18,3 +28,4 @@ TODO:
 * add annotations
 * add $fieldname, @labelname
 * add nested packages
+* add function/construct call with generic
