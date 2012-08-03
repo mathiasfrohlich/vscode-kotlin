@@ -102,7 +102,7 @@
         "field-modifiers": {
             "patterns": [
                 {
-                    "match": "\\b(override)\\b",
+                    "match": "\\b(override|open)\\b",
                     "name": "storage.modifier.kotlin"
                 }
             ]
@@ -375,6 +375,21 @@
                             "name": "constant.character.escape.kotlin"
                         }
                     ]
+                },
+                {
+                    "begin": "`", 
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.begin.kotlin"
+                        }
+                    }, 
+                    "end": "`", 
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.kotlin"
+                        }
+                    }, 
+                    "name": "string.quoted.single.kotlin"
                 }
             ]
         },

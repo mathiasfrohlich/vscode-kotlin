@@ -207,7 +207,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(override)\b</string>
+					<string>\b(override|open)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
 				</dict>
@@ -674,6 +674,30 @@
 							<string>constant.character.escape.kotlin</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>`</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.kotlin</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>`</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.kotlin</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.single.kotlin</string>
 				</dict>
 			</array>
 		</dict>
