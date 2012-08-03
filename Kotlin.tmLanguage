@@ -387,9 +387,9 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>[^\s:]</string>
+					<string>\w+</string>
 					<key>name</key>
-					<string>variable.parameter.kotlin</string>
+					<string>variable.parameter.function.kotlin</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -479,9 +479,9 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\$(?=\{[^\}]+\})</string>
+							<string>(\$\w+|\$\{[^\}]+\})</string>
 							<key>name</key>
-							<string>constant.other.kotlin</string>
+							<string>variable.parameter.template.kotlin</string>
 						</dict>
 						<dict>
 							<key>match</key>

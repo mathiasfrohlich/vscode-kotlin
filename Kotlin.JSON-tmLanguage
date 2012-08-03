@@ -209,8 +209,8 @@
                     "include": "#var-modifiers"
                 },
                 {
-                    "match": "[^\\s:]",
-                    "name": "variable.parameter.kotlin"
+                    "match": "\\w+",
+                    "name": "variable.parameter.function.kotlin"
                 },
                 {
                     "begin": "(:)",
@@ -262,8 +262,8 @@
                     "name": "string.quoted.double.kotlin", 
                     "patterns": [
                         {
-                            "match": "\\$(?=\\{[^\\}]+\\})",
-                            "name": "constant.other.kotlin"
+                            "match": "(\\$\\w+|\\$\\{[^\\}]+\\})",
+                            "name": "variable.parameter.template.kotlin"
                         },
                         {
                             "match": "\\\\.", 
