@@ -277,9 +277,9 @@
 		<key>functions</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w?[\w\s]*(?:fun)\s+([^\s\(]+))</string>
+			<string>(?=\w?[\w\s]*(?:fun))</string>
 			<key>end</key>
-			<string>(?=}|$)</string>
+			<string>}|(?=$)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -332,7 +332,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?={|=)</string>
+					<string>(?={|=|$)</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -418,7 +418,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(if|then|else|while|for|do|return)\b</string>
+					<string>\b(if|then|else|while|for|do|return|when)\b</string>
 					<key>name</key>
 					<string>keyword.control.kotlin</string>
 				</dict>

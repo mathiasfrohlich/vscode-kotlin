@@ -193,8 +193,8 @@
             ]
         },
         "functions": {
-            "begin": "(?=\\w?[\\w\\s]*(?:fun)\\s+([^\\s\\(]+))",
-            "end": "(?=}|$)",
+            "begin": "(?=\\w?[\\w\\s]*(?:fun))",
+            "end": "}|(?=$)",
             "patterns": [
                 {
                     "include": "#scope-modifiers"
@@ -229,7 +229,7 @@
                             "name": "keyword.operator.declaration.kotlin"
                         }
                     },
-                    "end": "(?={|=)", 
+                    "end": "(?={|=|$)", 
                     "patterns": [
                         {
                             "include": "#types"
@@ -414,7 +414,7 @@
                     "name": "keyword.control.catch-exception.kotlin"
                 },
                 {
-                    "match": "\\b(if|then|else|while|for|do|return)\\b", 
+                    "match": "\\b(if|then|else|while|for|do|return|when)\\b", 
                     "name": "keyword.control.kotlin"
                 },
                 {
