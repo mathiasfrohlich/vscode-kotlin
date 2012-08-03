@@ -99,6 +99,19 @@
 				</dict>
 				<dict>
 					<key>begin</key>
+					<string>&lt;</string>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#generic-modifiers</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>\(</string>
 					<key>end</key>
 					<string>\)</string>
@@ -348,6 +361,18 @@
 							<string>#statements</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>generic-modifiers</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(out|in)\b</string>
+					<key>name</key>
+					<string>storage.modifier.kotlin</string>
 				</dict>
 			</array>
 		</dict>
@@ -681,7 +706,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array|Array&lt;.[^&gt;]&gt;)\b</string>
+					<string>\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array)\b</string>
 					<key>name</key>
 					<string>storage.type.buildin.kotlin</string>
 				</dict>

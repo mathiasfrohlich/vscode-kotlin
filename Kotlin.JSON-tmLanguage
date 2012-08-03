@@ -110,10 +110,18 @@
                 }
             ]
         },
+        "generic-modifiers": {
+            "patterns": [
+                {
+                    "match": "\\b(out|in)\\b",
+                    "name": "storage.modifier.kotlin"
+                }
+            ]
+        },
         "types": {
             "patterns": [
                 {
-                    "match": "\\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array|Array<.[^>]>)\\b", 
+                    "match": "\\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array)\\b", 
                     "name": "storage.type.buildin.kotlin"
                 }
             ]
@@ -138,6 +146,15 @@
                         }
                     },
                     "match": "(class|object|trait)\\s+(\\w+)"
+                },
+                {
+                    "begin": "<",
+                    "end": ">",
+                    "patterns": [
+                        { 
+                            "include": "#generic-modifiers" 
+                        }
+                    ]
                 },
                 {
                     "begin": "\\(", 
