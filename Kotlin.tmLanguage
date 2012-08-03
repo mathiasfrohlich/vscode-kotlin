@@ -108,6 +108,10 @@
 							<key>include</key>
 							<string>#generic-modifiers</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>#types</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>
@@ -157,7 +161,7 @@
 							<array>
 								<dict>
 									<key>include</key>
-									<string>#statements</string>
+									<string>#expressions</string>
 								</dict>
 							</array>
 						</dict>
@@ -180,7 +184,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#statements</string>
+							<string>#expressions</string>
 						</dict>
 					</array>
 				</dict>
@@ -246,6 +250,41 @@
 					<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\b</string>
 					<key>name</key>
 					<string>constant.numeric.kotlin</string>
+				</dict>
+			</array>
+		</dict>
+		<key>expressions</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#strings</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constants</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#keywords</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\{</string>
+					<key>end</key>
+					<string>\}</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expressions</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -337,7 +376,11 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#statements</string>
+							<string>#variables</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#expressions</string>
 						</dict>
 					</array>
 				</dict>
@@ -358,7 +401,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#statements</string>
+							<string>#expressions</string>
 						</dict>
 					</array>
 				</dict>
@@ -541,7 +584,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#statements</string>
+							<string>#expressions</string>
 						</dict>
 					</array>
 				</dict>
@@ -556,45 +599,6 @@
 					<string>\b(public|private|protected)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
-				</dict>
-			</array>
-		</dict>
-		<key>statements</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#strings</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#constants</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#types</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#keywords</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#comments</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>\{</string>
-					<key>end</key>
-					<string>\}</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#statements</string>
-						</dict>
-					</array>
 				</dict>
 			</array>
 		</dict>
@@ -705,10 +709,31 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>begin</key>
+					<string>&lt;</string>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>name</key>
+					<string>storage.type.generic.kotlin</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#types</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array)\b</string>
 					<key>name</key>
 					<string>storage.type.buildin.kotlin</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?:IntArray)\b</string>
+					<key>name</key>
+					<string>storage.type.buildin.array.kotlin</string>
 				</dict>
 			</array>
 		</dict>
@@ -763,7 +788,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#statements</string>
+					<string>#expressions</string>
 				</dict>
 				<dict>
 					<key>match</key>

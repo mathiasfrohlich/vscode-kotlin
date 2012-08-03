@@ -121,8 +121,22 @@
         "types": {
             "patterns": [
                 {
+                    "begin": "<",
+                    "end": ">",
+                    "patterns": [
+                        { 
+                            "include": "#types" 
+                        }
+                    ],
+                    "name": "storage.type.generic.kotlin"
+                },
+                {
                     "match": "\\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array)\\b", 
                     "name": "storage.type.buildin.kotlin"
+                },
+                {
+                    "match": "\\b(?:IntArray)\\b", 
+                    "name": "storage.type.buildin.array.kotlin"
                 }
             ]
         },
@@ -153,6 +167,9 @@
                     "patterns": [
                         { 
                             "include": "#generic-modifiers" 
+                        },
+                        {
+                            "include": "#types"
                         }
                     ]
                 },
@@ -186,7 +203,7 @@
                             "end": "\\)",
                             "patterns": [
                                 {
-                                    "include": "#statements"
+                                    "include": "#expressions"
                                 }
                             ]
                         }
@@ -203,7 +220,7 @@
                             "include": "#variables" 
                         },
                         { 
-                            "include": "#statements" 
+                            "include": "#expressions" 
                         }
                     ]
                 }
@@ -234,7 +251,7 @@
                     "include": "#types"
                 },
                 {
-                    "include": "#statements"
+                    "include": "#expressions"
                 },
                 {
                     "match": "get\\(\\)",
@@ -291,7 +308,10 @@
                     "end": "(?=})", 
                     "patterns": [
                         {
-                            "include": "#statements"
+                            "include": "#variables"
+                        },
+                        {
+                            "include": "#expressions"
                         }
                     ]  
                 },
@@ -305,7 +325,7 @@
                     "end": "(?=$)", 
                     "patterns": [
                         {
-                            "include": "#statements"
+                            "include": "#expressions"
                         }
                     ]  
                 }
@@ -344,22 +364,19 @@
                     "end": "(?=,|\\))",
                     "patterns": [
                         {
-                            "include" : "#statements"
+                            "include" : "#expressions"
                         }
                     ]
                 }
             ]
         },
-        "statements": {
+        "expressions": {
             "patterns": [
                 {
                     "include": "#strings"
                 },
                 {
                     "include": "#constants"
-                },
-                {
-                    "include": "#types"
                 },
                 {
                     "include": "#keywords"
@@ -372,7 +389,7 @@
                     "end": "\\}",
                     "patterns": [
                         { 
-                            "include": "#statements" 
+                            "include": "#expressions" 
                         }
                     ]
                 }
