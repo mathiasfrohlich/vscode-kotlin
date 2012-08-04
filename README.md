@@ -3,6 +3,8 @@ Kotlin Sublime Text 2 Package
 
 This is [Sumblime Text 2](http://www.sublimetext.com/) package for [Kotlin](http://jetbrains.com/kotlin) programming language.
 
+*TODO* put image here
+
 Overview
 --------
 
@@ -33,6 +35,9 @@ TODO
 
 Contribution
 ------------
+
+If you want to contribute to this project, first of all you need to download the latest version of [AAAPackageDev](https://bitbucket.org/guillermooo/aaapackagedev). 
+Then you can follow the [tutorial](http://sublimetext.info/docs/en/extensibility/syntaxdefs.html) for changing the syntax defenition file. The best way to contribbute is to send pull-requests though GitHub interface.
 
 Links
 -----
