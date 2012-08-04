@@ -52,6 +52,20 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>calls</key>
+		<dict>
+			<key>begin</key>
+			<string>(?=\w+(&lt;[\w\.\s&lt;&gt;,]*&gt;)?\()</string>
+			<key>end</key>
+			<string>(?=\))</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#types</string>
+				</dict>
+			</array>
+		</dict>
 		<key>class-modifiers</key>
 		<dict>
 			<key>patterns</key>
@@ -287,6 +301,10 @@
 							<string>#expressions</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#calls</string>
 				</dict>
 			</array>
 		</dict>
@@ -785,12 +803,46 @@
 					<string>(var|val)\s+(\w+)</string>
 				</dict>
 				<dict>
-					<key>include</key>
-					<string>#types</string>
+					<key>begin</key>
+					<string>(:)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.declaration.kotlin</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=$|=)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#types</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
-					<key>include</key>
-					<string>#expressions</string>
+					<key>begin</key>
+					<string>(=)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.assignment.kotlin</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=$)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expressions</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>match</key>

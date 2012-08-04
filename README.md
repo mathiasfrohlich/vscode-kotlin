@@ -12,7 +12,6 @@ The following things already implemented:
 
 TODO
 ----
-* add generics (function, classes, types, inherits)
 * add properties (get/set)
 * add inner functions
 * add inner classes

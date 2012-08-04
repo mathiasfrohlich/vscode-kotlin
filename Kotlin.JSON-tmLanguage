@@ -248,11 +248,33 @@
                     },
                     "match": "(var|val)\\s+(\\w+)"
                 },
-                { 
-                    "include": "#types"
+                {
+                    "begin": "(:)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.declaration.kotlin"
+                        }
+                    },
+                    "end": "(?=$|=)",
+                    "patterns": [
+                        {
+                            "include": "#types"
+                        }
+                    ]
                 },
                 {
-                    "include": "#expressions"
+                    "begin": "(=)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.assignment.kotlin"
+                        }
+                    },
+                    "end": "(?=$)",
+                    "patterns": [
+                        {
+                            "include": "#expressions"
+                        }
+                    ]
                 },
                 {
                     "match": "get\\(\\)",
@@ -393,6 +415,18 @@
                             "include": "#expressions" 
                         }
                     ]
+                },
+                {
+                    "include": "#calls"
+                }
+            ]
+        },
+        "calls": {
+            "begin": "(?=\\w+(<[\\w\\.\\s<>,]*>)?\\()",
+            "end": "(?=\\))",
+            "patterns": [
+                {
+                    "include": "#types"
                 }
             ]
         },
