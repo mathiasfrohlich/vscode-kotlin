@@ -10,6 +10,9 @@ The following things already implemented:
 
 * Kotlin Syntax Defenition <code>Kotlin.tmLanguage</code>
 
+Download
+--------
+
 TODO
 ----
 * add properties (get/set)
@@ -35,5 +38,8 @@ Links
 -----
 
 * https://github.com/vkostyukov/kotlin-sublime-package
+* http://www.sublimetext.com/
+* http://jetbrains.com/kotlin
 
+----
 by [Vladimir Kostyukov](http://vkostyukov.ru)
