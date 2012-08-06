@@ -251,15 +251,9 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(true|false|null)\b</string>
+					<string>\b(true|false|null|this|super)\b</string>
 					<key>name</key>
 					<string>constant.language.kotlin</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(this|super)\b</string>
-					<key>name</key>
-					<string>variable.language.kotlin</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -520,7 +514,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(if|then|else|while|for|do|return|when)\b</string>
+					<string>\b(if|then|else|while|for|do|return|when|break)\b</string>
 					<key>name</key>
 					<string>keyword.control.kotlin</string>
 				</dict>
