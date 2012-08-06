@@ -85,21 +85,27 @@
 					<string>#class-modifiers</string>
 				</dict>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>\b(class|object|trait)\b</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.other.kotlin</string>
 						</dict>
-						<key>2</key>
+					</dict>
+					<key>end</key>
+					<string>(?=&lt;|{|\(|:)</string>
+					<key>patterns</key>
+					<array>
 						<dict>
+							<key>match</key>
+							<string>\w+</string>
 							<key>name</key>
 							<string>entity.name.type.class.kotlin</string>
 						</dict>
-					</dict>
-					<key>match</key>
-					<string>(class|object|trait)\s+(\w+)</string>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -345,7 +351,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(fun)</string>
+					<string>\b(fun)\b</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -764,9 +770,9 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>&lt;</string>
+					<string>&lt;|\(</string>
 					<key>end</key>
-					<string>&gt;</string>
+					<string>&gt;|\)</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -792,15 +798,6 @@
 					<string>(-&gt;)</string>
 					<key>name</key>
 					<string>keyword.operator.declaration.kotlin</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>\(</string>
-					<key>end</key>
-					<string>\)</string>
-					<key>patterns</key>
-					<array>
-					</array>
 				</dict>
 			</array>
 		</dict>
@@ -833,21 +830,27 @@
 					<string>#variable-modifiers</string>
 				</dict>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>\b(var|val)\b</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.other.kotlin</string>
 						</dict>
-						<key>2</key>
+					</dict>
+					<key>end</key>
+					<string>(?=:|=|$)</string>
+					<key>patterns</key>
+					<array>
 						<dict>
+							<key>match</key>
+							<string>\w+</string>
 							<key>name</key>
 							<string>variable.language.kotlin</string>
 						</dict>
-					</dict>
-					<key>match</key>
-					<string>(var|val)\s+(\w+)</string>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>

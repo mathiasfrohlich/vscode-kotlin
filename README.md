@@ -23,15 +23,12 @@ TODO
 * add operator overriding
 * add build in arrays
 * add class extending
-* add type converting (->)
 * add namespace
 * add keywords: in,out
 * add annotations
 * add $fieldname, @labelname
 * add nested packages
-* add function/construct call with generic
-* rewrote classes like functions
-
+* object classes
 
 Contribution
 ------------

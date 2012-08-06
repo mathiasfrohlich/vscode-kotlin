@@ -124,8 +124,8 @@
         "types": {
             "patterns": [
                 {
-                    "begin": "<",
-                    "end": ">",
+                    "begin": "<|\\(",
+                    "end": ">|\\)",
                     "patterns": [
                         {
                             "include": "#types"
@@ -143,12 +143,6 @@
                 {
                     "match": "(->)",
                     "name": "keyword.operator.declaration.kotlin"
-                },
-                {
-                    "begin": "\\(",
-                    "end": "\\)",
-                    "patterns": [
-                    ]
                 }
             ]
         },
@@ -163,15 +157,19 @@
                     "include": "#class-modifiers"
                 },
                 {
-                    "captures": {
+                    "begin": "\\b(class|object|trait)\\b",
+                    "beginCaptures": {
                         "1": {
                             "name": "keyword.other.kotlin"
-                        }, 
-                        "2": {
-                            "name": "entity.name.type.class.kotlin"
                         }
                     },
-                    "match": "(class|object|trait)\\s+(\\w+)"
+                    "end": "(?=<|{|\\(|:)",
+                    "patterns": [
+                        {
+                            "match": "\\w+",
+                            "name": "entity.name.type.class.kotlin"
+                        }
+                    ]
                 },
                 {
                     "begin": "<",
@@ -253,15 +251,19 @@
                     "include": "#variable-modifiers"
                 },
                 {
-                    "captures": {
-                        "1": { 
+                    "begin": "\\b(var|val)\\b",
+                    "beginCaptures": {
+                        "1": {
                             "name": "keyword.other.kotlin" 
-                        },
-                        "2": {
-                            "name": "variable.language.kotlin"
                         }
                     },
-                    "match": "(var|val)\\s+(\\w+)"
+                    "end": "(?=:|=|$)",
+                    "patterns": [
+                        {
+                            "match": "\\w+",
+                            "name": "variable.language.kotlin"
+                        }
+                    ]
                 },
                 {
                     "begin": "(:)",
@@ -308,7 +310,7 @@
                     "include": "#function-modifiers"
                 },
                 {
-                    "begin": "(fun)",
+                    "begin": "\\b(fun)\\b",
                     "beginCaptures": {
                         "1": {
                             "name": "keyword.other.kotlin"
