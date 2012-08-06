@@ -281,21 +281,8 @@
 					</array>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>\w&lt;</string>
-					<key>end</key>
-					<string>\&gt;\(</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#types</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#expressions</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#types</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -763,10 +750,30 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>match</key>
+					<string>\b(Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte)\b</string>
+					<key>name</key>
+					<string>storage.type.buildin.kotlin</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(-&gt;)</string>
+					<key>name</key>
+					<string>keyword.operator.declaration.kotlin</string>
+				</dict>
+				<dict>
 					<key>begin</key>
-					<string>&lt;|\(</string>
+					<string>\b(Array)&lt;\b</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.buildin.kotlin</string>
+						</dict>
+					</dict>
 					<key>end</key>
-					<string>&gt;|\)</string>
+					<string>&gt;</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -776,22 +783,17 @@
 					</array>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array)\b</string>
-					<key>name</key>
-					<string>storage.type.buildin.kotlin</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(?:IntArray)\b</string>
-					<key>name</key>
-					<string>storage.type.buildin.array.kotlin</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(-&gt;)</string>
-					<key>name</key>
-					<string>keyword.operator.declaration.kotlin</string>
+					<key>begin</key>
+					<string>\w+&lt;</string>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#types</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>

@@ -124,25 +124,35 @@
         "types": {
             "patterns": [
                 {
-                    "begin": "<|\\(",
-                    "end": ">|\\)",
+                    "match": "\\b(Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte)\\b", 
+                    "name": "storage.type.buildin.kotlin"
+                },
+                {
+                    "match": "(->)",
+                    "name": "keyword.operator.declaration.kotlin"
+                },
+                {
+                    "begin": "\\b(Array)<\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "storage.type.buildin.kotlin"
+                        }
+                    },
+                    "end": ">",
+                    "patterns": [
+                        { 
+                            "include": "#types" 
+                        }
+                    ]
+                },
+                {
+                    "begin": "\\w+<",
+                    "end": ">",
                     "patterns": [
                         {
                             "include": "#types"
                         }
                     ]
-                },
-                {
-                    "match": "\\b(?:Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array)\\b", 
-                    "name": "storage.type.buildin.kotlin"
-                },
-                {
-                    "match": "\\b(?:IntArray)\\b", 
-                    "name": "storage.type.buildin.array.kotlin"
-                },
-                {
-                    "match": "(->)",
-                    "name": "keyword.operator.declaration.kotlin"
                 }
             ]
         },
@@ -440,16 +450,7 @@
                     ]
                 },
                 {
-                    "begin": "\\w<",
-                    "end": "\\>\\(",
-                    "patterns": [
-                        { 
-                            "include": "#types" 
-                        }, 
-                        { 
-                            "include": "#expressions" 
-                        }
-                    ]
+                    "include": "#types"
                 },
                 {
                     "include": "#strings"
