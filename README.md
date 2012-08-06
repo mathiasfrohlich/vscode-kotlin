@@ -21,7 +21,7 @@ TODO
 * add inner functions
 * add anonymous classes
 * add operator overriding
-* add IntArray
+* add build in arrays
 * add class extending
 * add type converting (->)
 * add namespace
@@ -30,6 +30,8 @@ TODO
 * add $fieldname, @labelname
 * add nested packages
 * add function/construct call with generic
+* rewrote classes like functions
+
 
 Contribution
 ------------

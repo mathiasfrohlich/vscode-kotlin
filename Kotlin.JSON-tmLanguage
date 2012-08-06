@@ -128,8 +128,7 @@
                     "end": ">",
                     "patterns": [
                         {
-                            "match": "\\w+",
-                            "name": "storage.type.generic.kotlin"
+                            "include": "#types"
                         }
                     ]
                 },
@@ -140,6 +139,16 @@
                 {
                     "match": "\\b(?:IntArray)\\b", 
                     "name": "storage.type.buildin.array.kotlin"
+                },
+                {
+                    "match": "(->)",
+                    "name": "keyword.operator.declaration.kotlin"
+                },
+                {
+                    "begin": "\\(",
+                    "end": "\\)",
+                    "patterns": [
+                    ]
                 }
             ]
         },
@@ -420,20 +429,8 @@
         "expressions": {
             "patterns": [
                 {
-                    "include": "#strings"
-                },
-                {
-                    "include": "#constants"
-                },
-                {
-                    "include": "#keywords"
-                },
-                {
-                    "include": "#comments"
-                },
-                {
-                    "begin": "\\{",
-                    "end": "\\}",
+                    "begin": "\\(",
+                    "end": "\\)",
                     "patterns": [
                         { 
                             "include": "#expressions" 
@@ -441,19 +438,28 @@
                     ]
                 },
                 {
-                    "include": "#calls"
-                }
-            ]
-        },
-        "calls": {
-            "begin": "\\w+(<[\\w\\.\\s<>,]*>)?\\(",
-            "end": "\\)",
-            "patterns": [
-                {
-                    "include": "#types"
+                    "begin": "\\w<",
+                    "end": "\\>\\(",
+                    "patterns": [
+                        { 
+                            "include": "#types" 
+                        }, 
+                        { 
+                            "include": "#expressions" 
+                        }
+                    ]
                 },
                 {
-                    "include": "#expressions"
+                    "include": "#strings"
+                },
+                {
+                    "include": "#constants"
+                },
+                {
+                    "include": "#comments"
+                },
+                {
+                    "include": "#keywords"
                 }
             ]
         },
@@ -565,7 +571,7 @@
                     "name": "keyword.operator.assignment.kotlin"
                 },
                 {
-                    "match": "(:|->)", 
+                    "match": "(:)", 
                     "name": "keyword.operator.declaration.kotlin"
                 },
                 {

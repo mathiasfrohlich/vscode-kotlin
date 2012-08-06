@@ -56,24 +56,6 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>calls</key>
-		<dict>
-			<key>begin</key>
-			<string>\w+(&lt;[\w\.\s&lt;&gt;,]*&gt;)?\(</string>
-			<key>end</key>
-			<string>\)</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#types</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#expressions</string>
-				</dict>
-			</array>
-		</dict>
 		<key>class-modifiers</key>
 		<dict>
 			<key>patterns</key>
@@ -286,26 +268,10 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#strings</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#constants</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#keywords</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#comments</string>
-				</dict>
-				<dict>
 					<key>begin</key>
-					<string>\{</string>
+					<string>\(</string>
 					<key>end</key>
-					<string>\}</string>
+					<string>\)</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -315,8 +281,37 @@
 					</array>
 				</dict>
 				<dict>
+					<key>begin</key>
+					<string>\w&lt;</string>
+					<key>end</key>
+					<string>\&gt;\(</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#types</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#expressions</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
 					<key>include</key>
-					<string>#calls</string>
+					<string>#strings</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constants</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#keywords</string>
 				</dict>
 			</array>
 		</dict>
@@ -543,7 +538,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(:|-&gt;)</string>
+					<string>(:)</string>
 					<key>name</key>
 					<string>keyword.operator.declaration.kotlin</string>
 				</dict>
@@ -775,10 +770,8 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>match</key>
-							<string>\w+</string>
-							<key>name</key>
-							<string>storage.type.generic.kotlin</string>
+							<key>include</key>
+							<string>#types</string>
 						</dict>
 					</array>
 				</dict>
@@ -793,6 +786,21 @@
 					<string>\b(?:IntArray)\b</string>
 					<key>name</key>
 					<string>storage.type.buildin.array.kotlin</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(-&gt;)</string>
+					<key>name</key>
+					<string>keyword.operator.declaration.kotlin</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\(</string>
+					<key>end</key>
+					<string>\)</string>
+					<key>patterns</key>
+					<array>
+					</array>
 				</dict>
 			</array>
 		</dict>
