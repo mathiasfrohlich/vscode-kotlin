@@ -49,20 +49,28 @@
 			<key>include</key>
 			<string>#variables</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#expressions</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
 		<key>calls</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w+(&lt;[\w\.\s&lt;&gt;,]*&gt;)?\()</string>
+			<string>\w+(&lt;[\w\.\s&lt;&gt;,]*&gt;)?\(</string>
 			<key>end</key>
-			<string>(?=\))</string>
+			<string>\)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
 					<string>#types</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#expressions</string>
 				</dict>
 			</array>
 		</dict>
@@ -185,11 +193,15 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>{</string>
+					<string>\{</string>
 					<key>end</key>
-					<string>(?=})</string>
+					<string>\}</string>
 					<key>patterns</key>
 					<array>
+						<dict>
+							<key>include</key>
+							<string>#classes</string>
+						</dict>
 						<dict>
 							<key>include</key>
 							<string>#functions</string>

@@ -19,7 +19,6 @@ TODO
 ----
 * add properties (get/set)
 * add inner functions
-* add inner classes
 * add anonymous classes
 * add operator overriding
 * add "?" to build-in types
@@ -39,8 +38,8 @@ Contribution
 If you want to contribute to this project, first of all you need to download the latest version of [AAAPackageDev](https://bitbucket.org/guillermooo/aaapackagedev). 
 Then you can follow the tutorials:
 
-* [Syntax Defenitions](http://sublimetext.info/docs/en/extensibility/syntaxdefs.html) for changing the syntax defenition file. 
-* [Snippets](http://sublimetext.info/docs/en/extensibility/snippets.html) for changing the snippet files.
+* [Syntax Defenitions](http://sublimetext.info/docs/en/extensibility/syntaxdefs.html) for changing the syntax defenition file
+* [Snippets](http://sublimetext.info/docs/en/extensibility/snippets.html) for changing the snippet files
 
 There is also a [full documentation](http://sublimetext.info/docs/en/extensibility/extensibility.html) of Sublime Text extending.
 

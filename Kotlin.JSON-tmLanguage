@@ -27,6 +27,9 @@
         },
         {
             "include": "#variables"
+        },
+        {
+            "include": "#expressions"
         }
     ],
     "repository": {
@@ -211,9 +214,12 @@
                     ]
                 },
                 {
-                    "begin": "{",
-                    "end": "(?=})",
+                    "begin": "\\{",
+                    "end": "\\}",
                     "patterns": [
+                        {
+                            "include": "#classes"
+                        },
                         {
                             "include": "#functions"
                         },
@@ -422,11 +428,14 @@
             ]
         },
         "calls": {
-            "begin": "(?=\\w+(<[\\w\\.\\s<>,]*>)?\\()",
-            "end": "(?=\\))",
+            "begin": "\\w+(<[\\w\\.\\s<>,]*>)?\\(",
+            "end": "\\)",
             "patterns": [
                 {
                     "include": "#types"
+                },
+                {
+                    "include": "#expressions"
                 }
             ]
         },
