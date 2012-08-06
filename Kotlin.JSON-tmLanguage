@@ -299,15 +299,33 @@
                     "include": "#function-modifiers"
                 },
                 {
-                    "captures": {
+                    "begin": "(fun)",
+                    "beginCaptures": {
                         "1": {
                             "name": "keyword.other.kotlin"
-                        }, 
-                        "2": {
-                            "name": "entity.name.function.kotlin"
                         }
                     },
-                    "match": "(fun)\\s+([^\\s\\(]+)"
+                    "end": "(?=\\()",
+                    "patterns": [
+                        {
+                            "begin": "<",
+                            "end": ">",
+                            "patterns": [
+                                {
+                                    "match": "\\w+",
+                                    "name": "storage.type.generic.kotlin"
+                                }
+                            ]
+                        },
+                        {
+                            "captures": {
+                                "2": { 
+                                    "name": "entity.name.function.kotlin"
+                                }
+                            },
+                            "match": "([\\.\\w]+\\.)?(\\w+)"
+                        }
+                    ]
                 },
                 {
                     "begin": "\\(", 
@@ -547,7 +565,7 @@
                     "name": "keyword.operator.assignment.kotlin"
                 },
                 {
-                    "match": "(:)", 
+                    "match": "(:|->)", 
                     "name": "keyword.operator.declaration.kotlin"
                 },
                 {

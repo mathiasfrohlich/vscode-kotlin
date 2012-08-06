@@ -21,7 +21,6 @@ TODO
 * add inner functions
 * add anonymous classes
 * add operator overriding
-* add "?" to build-in types
 * add IntArray
 * add class extending
 * add type converting (->)

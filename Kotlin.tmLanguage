@@ -349,21 +349,48 @@
 					<string>#function-modifiers</string>
 				</dict>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>(fun)</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.other.kotlin</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.kotlin</string>
-						</dict>
 					</dict>
-					<key>match</key>
-					<string>(fun)\s+([^\s\(]+)</string>
+					<key>end</key>
+					<string>(?=\()</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>&lt;</string>
+							<key>end</key>
+							<string>&gt;</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>\w+</string>
+									<key>name</key>
+									<string>storage.type.generic.kotlin</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.function.kotlin</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>([\.\w]+\.)?(\w+)</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -516,7 +543,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(:)</string>
+					<string>(:|-&gt;)</string>
 					<key>name</key>
 					<string>keyword.operator.declaration.kotlin</string>
 				</dict>
