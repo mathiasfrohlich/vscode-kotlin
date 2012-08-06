@@ -29,6 +29,9 @@
             "include": "#variables"
         },
         {
+            "include": "#propepties"
+        },
+        {
             "include": "#expressions"
         }
     ],
@@ -100,7 +103,7 @@
         "param-modifiers": {
             "patterns": [
                 {
-                    "match": "\\b(var|val|vararg|lazy|out|ref)\\b",
+                    "match": "\\b(var|val|vararg|lazy|in|out|ref)\\b",
                     "name": "storage.modifier.kotlin"
                 }
             ]
@@ -108,7 +111,7 @@
         "variable-modifiers": {
             "patterns": [
                 {
-                    "match": "\\b(override|open)\\b",
+                    "match": "\\b(override|open|abstract)\\b",
                     "name": "storage.modifier.kotlin"
                 }
             ]
@@ -243,6 +246,9 @@
                         {
                             "include": "#variables" 
                         },
+                        {
+                            "include": "#propepties"
+                        },
                         { 
                             "include": "#expressions" 
                         }
@@ -307,6 +313,10 @@
                     "match": "get\\(\\)",
                     "name": "keyword.other.kotlin"
                 }
+            ]
+        },
+        "propepties": {
+            "patterns": [
             ]
         },
         "functions": {

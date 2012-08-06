@@ -567,7 +567,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(var|val|vararg|lazy|out|ref)\b</string>
+					<string>\b(var|val|vararg|lazy|in|out|ref)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
 				</dict>
@@ -803,7 +803,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(override|open)\b</string>
+					<string>\b(override|open|abstract)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
 				</dict>
