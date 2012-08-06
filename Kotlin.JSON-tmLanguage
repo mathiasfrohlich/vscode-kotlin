@@ -310,13 +310,91 @@
                     ]
                 },
                 {
-                    "match": "get\\(\\)",
-                    "name": "keyword.other.kotlin"
+                    "include": "#propepties"
                 }
             ]
         },
         "propepties": {
             "patterns": [
+                {
+                    "begin": "(get)\\(\\s*\\)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.function.kotlin"
+                        }
+                    },
+                    "end": "\\}|$",
+                    "patterns": [
+                        {
+                            "begin": "(=)",
+                            "beginCaptures": {
+                                "1": {
+                                    "name": "keyword.operator.assignment.kotlin"
+                                }
+                            },
+                            "end": "(?=$)",
+                            "patterns": [
+                                {
+                                    "include": "#expressions"
+                                }
+                            ]
+                        },
+                        {
+                            "begin": "\\{",
+                            "end": "\\}",
+                            "patterns": [
+                                { 
+                                    "include": "#expressions" 
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "begin": "(set)(?=\\()",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.function.kotlin"
+                        }
+                    },
+                    "end": "\\}|$",
+                    "patterns": [
+                        {
+                            "begin": "\\(",
+                            "end": "\\)",
+                            "patterns": [
+                                {
+                                    "match": "\\w+",
+                                    "name": "variable.parameter.function.kotlin"
+                                }
+                             ] 
+                        },
+                        {
+                            "begin": "(=)",
+                            "beginCaptures": {
+                                "1": {
+                                    "name": "keyword.operator.assignment.kotlin"
+                                }
+                            },
+                            "end": "(?=$)",
+                            "patterns": [
+                                {
+                                    "include": "#expressions"
+                                }
+                            ]
+                        },
+                        {
+                            "begin": "\\{",
+                            "end": "\\}",
+                            "patterns": [
+                                { 
+                                    "include": "#expressions" 
+                                }
+                            ]
+                        }
+                    ]
+
+                }
             ]
         },
         "functions": {
