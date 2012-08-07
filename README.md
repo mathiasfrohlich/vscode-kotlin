@@ -21,14 +21,12 @@ TODO
 * add inner functions
 * add anonymous classes
 * add operator overriding
-* add build in arrays
-* add class extending
 * add namespace
-* add keywords: in,out
 * add annotations
-* add $fieldname, @labelname
 * add nested packages
 * object classes
+
+* agregate assignment into one 
 
 Contribution
 ------------

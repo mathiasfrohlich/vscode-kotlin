@@ -29,7 +29,7 @@
             "include": "#variables"
         },
         {
-            "include": "#propepties"
+            "include": "#getters-and-setters"
         },
         {
             "include": "#expressions"
@@ -247,7 +247,7 @@
                             "include": "#variables" 
                         },
                         {
-                            "include": "#propepties"
+                            "include": "#getters-and-setters"
                         },
                         { 
                             "include": "#expressions" 
@@ -310,11 +310,11 @@
                     ]
                 },
                 {
-                    "include": "#propepties"
+                    "include": "#getters-and-setters"
                 }
             ]
         },
-        "propepties": {
+        "getters-and-setters": {
             "patterns": [
                 {
                     "begin": "(get)\\(\\s*\\)",
