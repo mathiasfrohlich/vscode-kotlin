@@ -31,7 +31,7 @@ TODO
 Contribution
 ------------
 
-If you want to contribute to this project, first of all you need to download the latest version of [AAAPackageDev](https://bitbucket.org/guillermooo/aaapackagedev). 
+If you want to contribute to this project, first of all you need to download the latest version of [AAAPackageDev](https://bitbucket.org/guillermooo/aaapackagedev) - useful tool for Sublime Text Packages developing. 
 Then you can follow the tutorials:
 
 * [Syntax Defenitions](http://sublimetext.info/docs/en/extensibility/syntaxdefs.html) for changing the syntax defenition file
