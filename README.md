@@ -17,7 +17,6 @@ Download
 
 TODO
 ----
-* add properties (get/set)
 * add inner functions
 * add anonymous classes
 * add operator overriding
@@ -27,6 +26,8 @@ TODO
 * object classes
 
 * agregate assignment into one 
+* add extendig to generics
+* agregate generic into one
 
 Contribution
 ------------
