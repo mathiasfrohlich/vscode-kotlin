@@ -51,7 +51,7 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#propepties</string>
+			<string>#getters-and-setters</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -60,18 +60,6 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>class-modifiers</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\b(abstract|final|enum|open|attribute|annotation)\b</string>
-					<key>name</key>
-					<string>storage.modifier.kotlin</string>
-				</dict>
-			</array>
-		</dict>
 		<key>classes</key>
 		<dict>
 			<key>begin</key>
@@ -82,11 +70,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#scope-modifiers</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#class-modifiers</string>
+					<string>#modifiers</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -120,7 +104,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#generic-modifiers</string>
+							<string>#modifiers</string>
 						</dict>
 						<dict>
 							<key>match</key>
@@ -139,7 +123,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#scope-modifiers</string>
+							<string>#modifiers</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -204,7 +188,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#propepties</string>
+							<string>#getters-and-setters</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -310,18 +294,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>function-modifiers</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\b(abstract|final|open|override|inline)\b</string>
-					<key>name</key>
-					<string>storage.modifier.kotlin</string>
-				</dict>
-			</array>
-		</dict>
 		<key>functions</key>
 		<dict>
 			<key>begin</key>
@@ -332,11 +304,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#scope-modifiers</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#function-modifiers</string>
+					<string>#modifiers</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -361,6 +329,10 @@
 							<key>patterns</key>
 							<array>
 								<dict>
+									<key>include</key>
+									<string>#modifiers</string>
+								</dict>
+								<dict>
 									<key>match</key>
 									<string>\w+</string>
 									<key>name</key>
@@ -378,7 +350,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>([\.\w]+\.)?(\w+)</string>
+							<string>([\.&lt;\?&gt;\w]+\.)?(\w+)</string>
 						</dict>
 					</array>
 				</dict>
@@ -456,15 +428,126 @@
 				</dict>
 			</array>
 		</dict>
-		<key>generic-modifiers</key>
+		<key>getters-and-setters</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\b(out|in)\b</string>
-					<key>name</key>
-					<string>storage.modifier.kotlin</string>
+					<key>begin</key>
+					<string>\b(get)\b\s*\(\s*\)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.kotlin</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\}|(?=\bset\b)|$</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>(=)</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.assignment.kotlin</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>(?=$|\bset\b)</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#expressions</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>\{</string>
+							<key>end</key>
+							<string>\}</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#expressions</string>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\b(set)\b\s*(?=\()</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.kotlin</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\}|(?=\bget\b)|$</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>\(</string>
+							<key>end</key>
+							<string>\)</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>\w+</string>
+									<key>name</key>
+									<string>variable.parameter.function.kotlin</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(=)</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.assignment.kotlin</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>(?=$|\bset\b)</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#expressions</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>\{</string>
+							<key>end</key>
+							<string>\}</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#expressions</string>
+								</dict>
+							</array>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -569,13 +652,13 @@
 				</dict>
 			</array>
 		</dict>
-		<key>param-modifiers</key>
+		<key>modifiers</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(var|val|vararg|lazy|in|out|ref)\b</string>
+					<string>\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
 				</dict>
@@ -587,7 +670,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#param-modifiers</string>
+					<string>#modifiers</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -636,141 +719,6 @@
 							<string>#expressions</string>
 						</dict>
 					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>propepties</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>(get)\(\s*\)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.kotlin</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\}|$</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>begin</key>
-							<string>(=)</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.operator.assignment.kotlin</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>(?=$)</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#expressions</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>\{</string>
-							<key>end</key>
-							<string>\}</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#expressions</string>
-								</dict>
-							</array>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>(set)(?=\()</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.kotlin</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\}|$</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>begin</key>
-							<string>\(</string>
-							<key>end</key>
-							<string>\)</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>match</key>
-									<string>\w+</string>
-									<key>name</key>
-									<string>variable.parameter.function.kotlin</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(=)</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.operator.assignment.kotlin</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>(?=$)</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#expressions</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>\{</string>
-							<key>end</key>
-							<string>\}</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#expressions</string>
-								</dict>
-							</array>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>scope-modifiers</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\b(public|private|protected)\b</string>
-					<key>name</key>
-					<string>storage.modifier.kotlin</string>
 				</dict>
 			</array>
 		</dict>
@@ -928,18 +876,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>variable-modifiers</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\b(override|open|abstract)\b</string>
-					<key>name</key>
-					<string>storage.modifier.kotlin</string>
-				</dict>
-			</array>
-		</dict>
 		<key>variables</key>
 		<dict>
 			<key>begin</key>
@@ -950,11 +886,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#scope-modifiers</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#variable-modifiers</string>
+					<string>#modifiers</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -968,9 +900,24 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?=:|=|$)</string>
+					<string>(?=:)</string>
 					<key>patterns</key>
 					<array>
+						<dict>
+							<key>begin</key>
+							<string>&lt;</string>
+							<key>end</key>
+							<string>&gt;</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>\w+</string>
+									<key>name</key>
+									<string>keyword.control.kotlin</string>
+								</dict>
+							</array>
+						</dict>
 						<dict>
 							<key>match</key>
 							<string>\w+</string>
@@ -998,6 +945,10 @@
 							<key>include</key>
 							<string>#types</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>#getters-and-setters</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>
@@ -1019,11 +970,11 @@
 							<key>include</key>
 							<string>#expressions</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>#getters-and-setters</string>
+						</dict>
 					</array>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#propepties</string>
 				</dict>
 			</array>
 		</dict>

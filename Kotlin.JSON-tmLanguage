@@ -76,50 +76,10 @@
                 }
             ]
         },
-        "scope-modifiers": {
+        "modifiers": {
             "patterns": [
                 {
-                    "match": "\\b(public|private|protected)\\b",
-                    "name": "storage.modifier.kotlin"
-                }
-            ]
-        },
-        "class-modifiers": {
-            "patterns": [
-                {
-                    "match": "\\b(abstract|final|enum|open|attribute|annotation)\\b",
-                    "name": "storage.modifier.kotlin"
-                }
-             ]
-        },
-        "function-modifiers": {
-            "patterns": [
-                {
-                    "match": "\\b(abstract|final|open|override|inline)\\b",
-                    "name": "storage.modifier.kotlin"   
-                }
-            ]
-        },
-        "param-modifiers": {
-            "patterns": [
-                {
-                    "match": "\\b(var|val|vararg|lazy|in|out|ref)\\b",
-                    "name": "storage.modifier.kotlin"
-                }
-            ]
-        },
-        "variable-modifiers": {
-            "patterns": [
-                {
-                    "match": "\\b(override|open|abstract)\\b",
-                    "name": "storage.modifier.kotlin"
-                }
-            ]
-        },
-        "generic-modifiers": {
-            "patterns": [
-                {
-                    "match": "\\b(out|in)\\b",
+                    "match": "\\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref)\\b",
                     "name": "storage.modifier.kotlin"
                 }
             ]
@@ -164,10 +124,7 @@
             "end": "}|(?=$)",
             "patterns": [
                 {
-                    "include": "#scope-modifiers"
-                },
-                {
-                    "include": "#class-modifiers"
+                    "include": "#modifiers"
                 },
                 {
                     "begin": "\\b(class|object|trait)\\b",
@@ -189,7 +146,7 @@
                     "end": ">",
                     "patterns": [
                         { 
-                            "include": "#generic-modifiers"     
+                            "include": "#modifiers"     
                         },
                         {
                             "match": "\\w+",
@@ -202,7 +159,7 @@
                     "end": "\\)", 
                     "patterns": [
                         {
-                            "include": "#scope-modifiers"
+                            "include": "#modifiers"
                         },
                         {
                             "include": "#parameters"
@@ -261,10 +218,7 @@
             "end": "(?=$)",
             "patterns": [
                 {
-                    "include": "#scope-modifiers"
-                },
-                {
-                    "include": "#variable-modifiers"
+                    "include": "#modifiers"
                 },
                 {
                     "begin": "\\b(var|val)\\b",
@@ -273,8 +227,18 @@
                             "name": "keyword.other.kotlin" 
                         }
                     },
-                    "end": "(?=:|=|$)",
+                    "end": "(?=:)",
                     "patterns": [
+                        {
+                            "begin": "<",
+                            "end": ">",
+                            "patterns": [
+                                {
+                                    "match": "\\w+",
+                                    "name": "keyword.control.kotlin"
+                                }
+                            ]
+                        },
                         {
                             "match": "\\w+",
                             "name": "variable.language.kotlin"
@@ -292,6 +256,9 @@
                     "patterns": [
                         {
                             "include": "#types"
+                        },
+                        { 
+                            "include": "#getters-and-setters" 
                         }
                     ]
                 },
@@ -306,24 +273,24 @@
                     "patterns": [
                         {
                             "include": "#expressions"
+                        },
+                        {
+                            "include": "#getters-and-setters"
                         }
                     ]
-                },
-                {
-                    "include": "#getters-and-setters"
                 }
             ]
         },
         "getters-and-setters": {
             "patterns": [
                 {
-                    "begin": "(get)\\(\\s*\\)",
+                    "begin": "\\b(get)\\b\\s*\\(\\s*\\)",
                     "beginCaptures": {
                         "1": {
                             "name": "entity.name.function.kotlin"
                         }
                     },
-                    "end": "\\}|$",
+                    "end": "\\}|(?=\\bset\\b)|$",
                     "patterns": [
                         {
                             "begin": "(=)",
@@ -332,7 +299,7 @@
                                     "name": "keyword.operator.assignment.kotlin"
                                 }
                             },
-                            "end": "(?=$)",
+                            "end": "(?=$|\\bset\\b)",
                             "patterns": [
                                 {
                                     "include": "#expressions"
@@ -351,13 +318,13 @@
                     ]
                 },
                 {
-                    "begin": "(set)(?=\\()",
+                    "begin": "\\b(set)\\b\\s*(?=\\()",
                     "beginCaptures": {
                         "1": {
                             "name": "entity.name.function.kotlin"
                         }
                     },
-                    "end": "\\}|$",
+                    "end": "\\}|(?=\\bget\\b)|$",
                     "patterns": [
                         {
                             "begin": "\\(",
@@ -376,7 +343,7 @@
                                     "name": "keyword.operator.assignment.kotlin"
                                 }
                             },
-                            "end": "(?=$)",
+                            "end": "(?=$|\\bset\\b)",
                             "patterns": [
                                 {
                                     "include": "#expressions"
@@ -402,10 +369,7 @@
             "end": "}|(?=$)",
             "patterns": [
                 {
-                    "include": "#scope-modifiers"
-                },
-                {
-                    "include": "#function-modifiers"
+                    "include": "#modifiers"
                 },
                 {
                     "begin": "\\b(fun)\\b",
@@ -421,6 +385,9 @@
                             "end": ">",
                             "patterns": [
                                 {
+                                    "include": "#modifiers"
+                                },
+                                {
                                     "match": "\\w+",
                                     "name": "storage.type.generic.kotlin"
                                 }
@@ -432,7 +399,7 @@
                                     "name": "entity.name.function.kotlin"
                                 }
                             },
-                            "match": "([\\.\\w]+\\.)?(\\w+)"
+                            "match": "([\\.<\\?>\\w]+\\.)?(\\w+)"
                         }
                     ]
                 },
@@ -490,7 +457,7 @@
         "parameters": {
             "patterns": [
                 {
-                    "include": "#param-modifiers"
+                    "include": "#modifiers"
                 },
                 {
                     "match": "\\w+",
