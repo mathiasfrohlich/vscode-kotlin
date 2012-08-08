@@ -836,19 +836,25 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray)\b</string>
+					<key>name</key>
+					<string>storage.type.buildin.array.kotlin</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(-&gt;)</string>
 					<key>name</key>
 					<string>keyword.operator.declaration.kotlin</string>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>\b(Array)&lt;\b</string>
+					<string>\b(Array|List|Map)&lt;\b</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>storage.type.buildin.kotlin</string>
+							<string>storage.type.buildin.collection.kotlin</string>
 						</dict>
 					</dict>
 					<key>end</key>

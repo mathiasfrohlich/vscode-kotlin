@@ -91,14 +91,18 @@
                     "name": "storage.type.buildin.kotlin"
                 },
                 {
+                    "match": "\\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray)\\b", 
+                    "name": "storage.type.buildin.array.kotlin"
+                },
+                {
                     "match": "(->)",
                     "name": "keyword.operator.declaration.kotlin"
                 },
                 {
-                    "begin": "\\b(Array)<\\b",
+                    "begin": "\\b(Array|List|Map)<\\b",
                     "beginCaptures": {
                         "1": {
-                            "name": "storage.type.buildin.kotlin"
+                            "name": "storage.type.buildin.collection.kotlin"
                         }
                     },
                     "end": ">",
