@@ -17,17 +17,15 @@ Download
 
 TODO
 ----
-* add inner functions
 * add anonymous classes
 * add operator overriding
 * add namespace
 * add annotations
-* add nested packages
 * object classes
-
 * agregate assignment into one 
 * add extendig to generics
 * agregate generic into one
+* fix bug with generic properties
 
 Contribution
 ------------
