@@ -247,8 +247,12 @@
                             ]
                         },
                         {
-                            "match": "\\w+",
-                            "name": "entity.name.function.kotlin"
+                            "captures": {
+                                "2": { 
+                                    "name": "entity.name.variable.kotlin"
+                                }
+                            },
+                            "match": "([\\.<\\?>\\w]+\\.)?(\\w+)"
                         }
                     ]
                 },

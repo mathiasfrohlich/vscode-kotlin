@@ -26,6 +26,7 @@ TODO
 * add extendig to generics
 * agregate generic into one
 * add heritance in generic
+* add closures handling
 
 Contribution
 ------------

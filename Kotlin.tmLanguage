@@ -929,10 +929,16 @@
 							</array>
 						</dict>
 						<dict>
+							<key>captures</key>
+							<dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.variable.kotlin</string>
+								</dict>
+							</dict>
 							<key>match</key>
-							<string>\w+</string>
-							<key>name</key>
-							<string>entity.name.function.kotlin</string>
+							<string>([\.&lt;\?&gt;\w]+\.)?(\w+)</string>
 						</dict>
 					</array>
 				</dict>
