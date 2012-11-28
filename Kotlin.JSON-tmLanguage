@@ -82,7 +82,7 @@
         "modifiers": {
             "patterns": [
                 {
-                    "match": "\\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref)\\b",
+                    "match": "\\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref|internal)\\b",
                     "name": "storage.modifier.kotlin"
                 }
             ]
