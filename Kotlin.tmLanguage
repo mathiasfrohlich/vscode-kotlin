@@ -57,21 +57,21 @@
 			<key>include</key>
 			<string>#expressions</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#modifiers</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
 		<key>classes</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w?[\w\s]*(?:class|object|trait))</string>
+			<string>(?=\w*(?:class|object|trait))</string>
 			<key>end</key>
 			<string>}|(?=$)</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#modifiers</string>
-				</dict>
 				<dict>
 					<key>begin</key>
 					<string>\b(class|object|trait)\b</string>
@@ -194,6 +194,10 @@
 							<key>include</key>
 							<string>#expressions</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>#modifiers</string>
+						</dict>
 					</array>
 				</dict>
 			</array>
@@ -297,15 +301,11 @@
 		<key>functions</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w?[\w\s]*(?:fun))</string>
+			<string>(?=\w*(?:fun))</string>
 			<key>end</key>
 			<string>}|(?=$)</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#modifiers</string>
-				</dict>
 				<dict>
 					<key>begin</key>
 					<string>\b(fun)\b</string>
@@ -402,6 +402,10 @@
 						<dict>
 							<key>include</key>
 							<string>#expressions</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#functions</string>
 						</dict>
 					</array>
 				</dict>
@@ -885,15 +889,11 @@
 		<key>variables</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w?[\w\s]*(?:var|val))</string>
+			<string>(?=\w*(?:var|val))</string>
 			<key>end</key>
-			<string>(?=$)</string>
+			<string>(?=:|$)</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#modifiers</string>
-				</dict>
 				<dict>
 					<key>begin</key>
 					<string>\b(var|val)\b</string>
@@ -917,10 +917,14 @@
 							<key>patterns</key>
 							<array>
 								<dict>
+									<key>include</key>
+									<string>#modifiers</string>
+								</dict>
+								<dict>
 									<key>match</key>
 									<string>\w+</string>
 									<key>name</key>
-									<string>keyword.control.kotlin</string>
+									<string>storage.type.generic.kotlin</string>
 								</dict>
 							</array>
 						</dict>
@@ -928,7 +932,7 @@
 							<key>match</key>
 							<string>\w+</string>
 							<key>name</key>
-							<string>variable.language.kotlin</string>
+							<string>entity.name.function.kotlin</string>
 						</dict>
 					</array>
 				</dict>

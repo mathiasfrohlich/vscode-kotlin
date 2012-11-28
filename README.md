@@ -25,7 +25,7 @@ TODO
 * agregate assignment into one 
 * add extendig to generics
 * agregate generic into one
-* fix bug with generic properties
+* add heritance in generic
 
 Contribution
 ------------

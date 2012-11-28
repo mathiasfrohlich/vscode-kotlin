@@ -33,6 +33,9 @@
         },
         {
             "include": "#expressions"
+        },
+        {
+            "include": "#modifiers"
         }
     ],
     "repository": {
@@ -124,12 +127,9 @@
             ]
         },
         "classes": {
-            "begin": "(?=\\w?[\\w\\s]*(?:class|object|trait))",
+            "begin": "(?=\\w*(?:class|object|trait))",
             "end": "}|(?=$)",
             "patterns": [
-                {
-                    "include": "#modifiers"
-                },
                 {
                     "begin": "\\b(class|object|trait)\\b",
                     "beginCaptures": {
@@ -212,18 +212,18 @@
                         },
                         { 
                             "include": "#expressions" 
+                        },
+                        { 
+                            "include": "#modifiers" 
                         }
                     ]
                 }
             ]
         },
         "variables": {
-            "begin": "(?=\\w?[\\w\\s]*(?:var|val))",
-            "end": "(?=$)",
+            "begin": "(?=\\w*(?:var|val))",
+            "end": "(?=:|$)",
             "patterns": [
-                {
-                    "include": "#modifiers"
-                },
                 {
                     "begin": "\\b(var|val)\\b",
                     "beginCaptures": {
@@ -238,14 +238,17 @@
                             "end": ">",
                             "patterns": [
                                 {
+                                    "include": "#modifiers"
+                                },
+                                {
                                     "match": "\\w+",
-                                    "name": "keyword.control.kotlin"
+                                    "name": "storage.type.generic.kotlin"
                                 }
                             ]
                         },
                         {
                             "match": "\\w+",
-                            "name": "variable.language.kotlin"
+                            "name": "entity.name.function.kotlin"
                         }
                     ]
                 },
@@ -369,12 +372,9 @@
             ]
         },
         "functions": {
-            "begin": "(?=\\w?[\\w\\s]*(?:fun))",
+            "begin": "(?=\\w*(?:fun))",
             "end": "}|(?=$)",
             "patterns": [
-                {
-                    "include": "#modifiers"
-                },
                 {
                     "begin": "\\b(fun)\\b",
                     "beginCaptures": {
@@ -439,6 +439,9 @@
                         },
                         {
                             "include": "#expressions"
+                        },
+                        {
+                            "include": "#functions"
                         }
                     ]  
                 },
