@@ -222,7 +222,7 @@
         },
         "variables": {
             "begin": "(?=\\w*(?:var|val))",
-            "end": "(?=:|$)",
+            "end": "(?=:|=|$)",
             "patterns": [
                 {
                     "begin": "\\b(var|val)\\b",
@@ -231,7 +231,7 @@
                             "name": "keyword.other.kotlin" 
                         }
                     },
-                    "end": "(?=:)",
+                    "end": "(?=:|=)",
                     "patterns": [
                         {
                             "begin": "<",
@@ -259,7 +259,7 @@
                             "name": "keyword.operator.declaration.kotlin"
                         }
                     },
-                    "end": "(?=$|=)",
+                    "end": "(?==|$)",
                     "patterns": [
                         {
                             "include": "#types"
