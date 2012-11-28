@@ -57,17 +57,13 @@
 			<key>include</key>
 			<string>#expressions</string>
 		</dict>
-		<dict>
-			<key>include</key>
-			<string>#modifiers</string>
-		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
 		<key>classes</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w*(?:class|object|trait))</string>
+			<string>(?=\s*(?:class|object|trait))</string>
 			<key>end</key>
 			<string>}|(?=$)</string>
 			<key>patterns</key>
@@ -194,10 +190,6 @@
 							<key>include</key>
 							<string>#expressions</string>
 						</dict>
-						<dict>
-							<key>include</key>
-							<string>#modifiers</string>
-						</dict>
 					</array>
 				</dict>
 			</array>
@@ -296,12 +288,16 @@
 					<key>include</key>
 					<string>#keywords</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#modifiers</string>
+				</dict>
 			</array>
 		</dict>
 		<key>functions</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w*(?:fun))</string>
+			<string>(?=\s*(?:fun))</string>
 			<key>end</key>
 			<string>}|(?=$)</string>
 			<key>patterns</key>
@@ -889,7 +885,7 @@
 		<key>variables</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\w*(?:var|val))</string>
+			<string>(?=\s*(?:var|val))</string>
 			<key>end</key>
 			<string>(?=:|=|$)</string>
 			<key>patterns</key>

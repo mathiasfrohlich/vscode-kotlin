@@ -33,9 +33,6 @@
         },
         {
             "include": "#expressions"
-        },
-        {
-            "include": "#modifiers"
         }
     ],
     "repository": {
@@ -127,7 +124,7 @@
             ]
         },
         "classes": {
-            "begin": "(?=\\w*(?:class|object|trait))",
+            "begin": "(?=\\s*(?:class|object|trait))",
             "end": "}|(?=$)",
             "patterns": [
                 {
@@ -212,16 +209,13 @@
                         },
                         { 
                             "include": "#expressions" 
-                        },
-                        { 
-                            "include": "#modifiers" 
                         }
                     ]
                 }
             ]
         },
         "variables": {
-            "begin": "(?=\\w*(?:var|val))",
+            "begin": "(?=\\s*(?:var|val))",
             "end": "(?=:|=|$)",
             "patterns": [
                 {
@@ -376,7 +370,7 @@
             ]
         },
         "functions": {
-            "begin": "(?=\\w*(?:fun))",
+            "begin": "(?=\\s*(?:fun))",
             "end": "}|(?=$)",
             "patterns": [
                 {
@@ -529,6 +523,9 @@
                 },
                 {
                     "include": "#keywords"
+                },
+                {
+                    "include": "#modifiers"
                 }
             ]
         },
