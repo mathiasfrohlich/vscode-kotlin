@@ -119,10 +119,6 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#modifiers</string>
-						</dict>
-						<dict>
-							<key>include</key>
 							<string>#parameters</string>
 						</dict>
 					</array>

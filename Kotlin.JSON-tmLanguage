@@ -160,9 +160,6 @@
                     "end": "\\)", 
                     "patterns": [
                         {
-                            "include": "#modifiers"
-                        },
-                        {
                             "include": "#parameters"
                         }
                     ]
@@ -208,7 +205,7 @@
                             "include": "#getters-and-setters"
                         },
                         { 
-                            "include": "#expressions" 
+                            "include": "#expressions"
                         }
                     ]
                 }
