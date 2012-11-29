@@ -123,6 +123,20 @@
         },
         "generics": {
             "patterns": [
+                {
+                    "begin": "(:)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.declaration.kotlin"
+                        }
+                    },
+                    "end": "(?=>)",
+                    "patterns": [
+                        { 
+                            "include": "#types" 
+                        }
+                    ]
+                },
                 { 
                     "include": "#keywords"
                 },
