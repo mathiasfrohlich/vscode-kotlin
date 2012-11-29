@@ -76,14 +76,6 @@
                 }
             ]
         },
-        "modifiers": {
-            "patterns": [
-                {
-                    "match": "\\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref|internal)\\b",
-                    "name": "storage.modifier.kotlin"
-                }
-            ]
-        },
         "types": {
             "patterns": [
                 {
@@ -147,7 +139,7 @@
                     "end": ">",
                     "patterns": [
                         { 
-                            "include": "#modifiers"     
+                            "include": "#keywords"
                         },
                         {
                             "match": "\\w+",
@@ -229,7 +221,7 @@
                             "end": ">",
                             "patterns": [
                                 {
-                                    "include": "#modifiers"
+                                    "include": "#keywords"
                                 },
                                 {
                                     "match": "\\w+",
@@ -384,7 +376,7 @@
                             "end": ">",
                             "patterns": [
                                 {
-                                    "include": "#modifiers"
+                                    "include": "#keywords"
                                 },
                                 {
                                     "match": "\\w+",
@@ -459,7 +451,7 @@
         "parameters": {
             "patterns": [
                 {
-                    "include": "#modifiers"
+                    "include": "#keywords"
                 },
                 {
                     "match": "\\w+",
@@ -520,9 +512,6 @@
                 },
                 {
                     "include": "#keywords"
-                },
-                {
-                    "include": "#modifiers"
                 }
             ]
         },
@@ -605,6 +594,10 @@
         },
         "keywords": {
             "patterns": [
+                {
+                    "match": "\\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref|internal)\\b",
+                    "name": "storage.modifier.kotlin"
+                },
                 {
                     "match": "\\b(var|val)\\b", 
                     "name": "keyword.operator.assignment.kotlin"

@@ -100,7 +100,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#modifiers</string>
+							<string>#keywords</string>
 						</dict>
 						<dict>
 							<key>match</key>
@@ -284,10 +284,6 @@
 					<key>include</key>
 					<string>#keywords</string>
 				</dict>
-				<dict>
-					<key>include</key>
-					<string>#modifiers</string>
-				</dict>
 			</array>
 		</dict>
 		<key>functions</key>
@@ -322,7 +318,7 @@
 							<array>
 								<dict>
 									<key>include</key>
-									<string>#modifiers</string>
+									<string>#keywords</string>
 								</dict>
 								<dict>
 									<key>match</key>
@@ -576,6 +572,12 @@
 			<array>
 				<dict>
 					<key>match</key>
+					<string>\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref|internal)\b</string>
+					<key>name</key>
+					<string>storage.modifier.kotlin</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>\b(var|val)\b</string>
 					<key>name</key>
 					<string>keyword.operator.assignment.kotlin</string>
@@ -648,25 +650,13 @@
 				</dict>
 			</array>
 		</dict>
-		<key>modifiers</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref|internal)\b</string>
-					<key>name</key>
-					<string>storage.modifier.kotlin</string>
-				</dict>
-			</array>
-		</dict>
 		<key>parameters</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#modifiers</string>
+					<string>#keywords</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -910,7 +900,7 @@
 							<array>
 								<dict>
 									<key>include</key>
-									<string>#modifiers</string>
+									<string>#keywords</string>
 								</dict>
 								<dict>
 									<key>match</key>

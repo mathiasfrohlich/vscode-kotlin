@@ -27,7 +27,7 @@ TODO
 * agregate generic into one
 * add heritance in generic
 * add closures handling
-* move modifiers into keywords
+* fix bug with "var a" without "=" or ":"
 
 Contribution
 ------------
