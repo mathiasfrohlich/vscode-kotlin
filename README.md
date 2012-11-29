@@ -27,7 +27,6 @@ TODO
 * agregate generic into one
 * add heritance in generic
 * add closures handling
-* there is could be a "type" in "getters-and-setters"
 
 Contribution
 ------------

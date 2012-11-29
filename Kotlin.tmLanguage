@@ -498,10 +498,8 @@
 							<key>patterns</key>
 							<array>
 								<dict>
-									<key>match</key>
-									<string>\w+</string>
-									<key>name</key>
-									<string>variable.parameter.function.kotlin</string>
+									<key>include</key>
+									<string>#parameters</string>
 								</dict>
 							</array>
 						</dict>
@@ -655,16 +653,6 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#keywords</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\w+</string>
-					<key>name</key>
-					<string>variable.parameter.function.kotlin</string>
-				</dict>
-				<dict>
 					<key>begin</key>
 					<string>(:)</string>
 					<key>beginCaptures</key>
@@ -705,6 +693,16 @@
 							<string>#expressions</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#keywords</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\w+</string>
+					<key>name</key>
+					<string>variable.parameter.function.kotlin</string>
 				</dict>
 			</array>
 		</dict>

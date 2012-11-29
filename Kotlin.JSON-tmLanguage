@@ -325,8 +325,7 @@
                             "end": "\\)",
                             "patterns": [
                                 {
-                                    "match": "\\w+",
-                                    "name": "variable.parameter.function.kotlin"
+                                    "include": "#parameters"
                                 }
                              ] 
                         },
@@ -354,7 +353,6 @@
                             ]
                         }
                     ]
-
                 }
             ]
         },
@@ -451,13 +449,6 @@
         "parameters": {
             "patterns": [
                 {
-                    "include": "#keywords"
-                },
-                {
-                    "match": "\\w+",
-                    "name": "variable.parameter.function.kotlin"
-                },
-                {
                     "begin": "(:)",
                     "beginCaptures": {
                         "1": {
@@ -484,6 +475,13 @@
                             "include" : "#expressions"
                         }
                     ]
+                },
+                {
+                    "include": "#keywords"
+                },
+                {
+                    "match": "\\w+",
+                    "name": "variable.parameter.function.kotlin"
                 }
             ]
         },
