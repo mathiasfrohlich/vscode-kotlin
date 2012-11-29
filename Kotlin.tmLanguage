@@ -100,13 +100,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#keywords</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>\w+</string>
-							<key>name</key>
-							<string>storage.type.generic.kotlin</string>
+							<string>#generics</string>
 						</dict>
 					</array>
 				</dict>
@@ -318,13 +312,7 @@
 							<array>
 								<dict>
 									<key>include</key>
-									<string>#keywords</string>
-								</dict>
-								<dict>
-									<key>match</key>
-									<string>\w+</string>
-									<key>name</key>
-									<string>storage.type.generic.kotlin</string>
+									<string>#generics</string>
 								</dict>
 							</array>
 						</dict>
@@ -417,6 +405,22 @@
 							<string>#expressions</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>generics</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#keywords</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\w+</string>
+					<key>name</key>
+					<string>storage.type.generic.kotlin</string>
 				</dict>
 			</array>
 		</dict>
@@ -906,13 +910,7 @@
 							<array>
 								<dict>
 									<key>include</key>
-									<string>#keywords</string>
-								</dict>
-								<dict>
-									<key>match</key>
-									<string>\w+</string>
-									<key>name</key>
-									<string>storage.type.generic.kotlin</string>
+									<string>#generics</string>
 								</dict>
 							</array>
 						</dict>

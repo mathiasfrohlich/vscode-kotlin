@@ -121,6 +121,17 @@
                 }
             ]
         },
+        "generics": {
+            "patterns": [
+                { 
+                    "include": "#keywords"
+                },
+                {
+                    "match": "\\w+",
+                    "name": "storage.type.generic.kotlin"
+                }
+            ]
+        },
         "classes": {
             "begin": "(?=\\s*(?:class|object|trait))",
             "end": "}|(?=$)",
@@ -145,11 +156,7 @@
                     "end": ">",
                     "patterns": [
                         { 
-                            "include": "#keywords"
-                        },
-                        {
-                            "match": "\\w+",
-                            "name": "storage.type.generic.kotlin"
+                            "include": "#generics" 
                         }
                     ]
                 },
@@ -227,11 +234,7 @@
                             "end": ">",
                             "patterns": [
                                 {
-                                    "include": "#keywords"
-                                },
-                                {
-                                    "match": "\\w+",
-                                    "name": "storage.type.generic.kotlin"
+                                    "include": "#generics"
                                 }
                             ]
                         },
@@ -380,11 +383,7 @@
                             "end": ">",
                             "patterns": [
                                 {
-                                    "include": "#keywords"
-                                },
-                                {
-                                    "match": "\\w+",
-                                    "name": "storage.type.generic.kotlin"
+                                    "include": "#generics"
                                 }
                             ]
                         },

@@ -23,8 +23,6 @@ TODO
 * add annotations
 * object classes
 * agregate assignment into one 
-* add extendig to generics
-* agregate generic into one
 * add heritance in generic
 * add closures handling
 
