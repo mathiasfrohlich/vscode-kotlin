@@ -19,10 +19,10 @@ TODO
 ----
 * add anonymous classes
 * add namespace
+* add typedef
 * object classes
 * agregate assignment into one 
 * add closures handling
-* is there "default" keyword in Kotlin?
 * add support for functions that returns many values
 * add support for labels
 
