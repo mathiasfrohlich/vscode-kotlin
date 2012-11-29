@@ -888,7 +888,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?=:|=)</string>
+					<string>(?=:|=|$)</string>
 					<key>patterns</key>
 					<array>
 						<dict>

@@ -214,7 +214,7 @@
                             "name": "keyword.other.kotlin" 
                         }
                     },
-                    "end": "(?=:|=)",
+                    "end": "(?=:|=|$)",
                     "patterns": [
                         {
                             "begin": "<",
