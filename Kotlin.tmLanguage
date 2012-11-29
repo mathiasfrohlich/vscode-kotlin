@@ -588,13 +588,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(if|then|else|while|for|do|return|when|break)\b</string>
+					<string>\b(if|then|else|while|for|do|return|when|where|break)\b</string>
 					<key>name</key>
 					<string>keyword.control.kotlin</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(in|is|as)\b</string>
+					<string>\b(in|is|as|assert)\b</string>
 					<key>name</key>
 					<string>keyword.operator.kotlin</string>
 				</dict>
@@ -849,6 +849,10 @@
 							<key>include</key>
 							<string>#types</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>#keywords</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>
@@ -861,6 +865,10 @@
 						<dict>
 							<key>include</key>
 							<string>#types</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#keywords</string>
 						</dict>
 					</array>
 				</dict>

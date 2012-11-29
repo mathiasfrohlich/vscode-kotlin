@@ -101,6 +101,9 @@
                     "patterns": [
                         { 
                             "include": "#types" 
+                        },
+                        {
+                            "include": "#keywords" 
                         }
                     ]
                 },
@@ -110,6 +113,9 @@
                     "patterns": [
                         {
                             "include": "#types"
+                        },
+                        {
+                            "include": "#keywords" 
                         }
                     ]
                 }
@@ -605,11 +611,11 @@
                     "name": "keyword.control.catch-exception.kotlin"
                 },
                 {
-                    "match": "\\b(if|then|else|while|for|do|return|when|break)\\b", 
+                    "match": "\\b(if|then|else|while|for|do|return|when|where|break)\\b", 
                     "name": "keyword.control.kotlin"
                 },
                 {
-                    "match": "\\b(in|is|as)\\b", 
+                    "match": "\\b(in|is|as|assert)\\b", 
                     "name": "keyword.operator.kotlin"
                 },
                 {
