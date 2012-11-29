@@ -28,6 +28,7 @@ TODO
 * add heritance in generic
 * add closures handling
 * fix bug with "var a" without "=" or ":"
+* there is could be a "type" in "getters-and-setters"
 
 Contribution
 ------------
