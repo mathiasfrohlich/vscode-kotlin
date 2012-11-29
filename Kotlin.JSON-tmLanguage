@@ -606,6 +606,10 @@
                 {
                     "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\\b", 
                     "name": "constant.numeric.kotlin"
+                },
+                {
+                    "match": "\\b([A-Z][A-Z0-9_]+)\\b",
+                    "name": "constant.other.kotlin"
                 }
             ]
         },
@@ -624,7 +628,7 @@
                     "name": "keyword.control.catch-exception.kotlin"
                 },
                 {
-                    "match": "\\b(if|then|else|while|for|do|return|when|where|break)\\b", 
+                    "match": "\\b(if|then|else|while|for|do|return|when|where|break|continue)\\b", 
                     "name": "keyword.control.kotlin"
                 },
                 {
