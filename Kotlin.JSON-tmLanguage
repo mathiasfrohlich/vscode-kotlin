@@ -20,6 +20,9 @@
             "include": "#imports"
         },
         {
+            "include": "#typedefs"
+        },
+        {
             "include": "#classes"
         },
         {
@@ -157,6 +160,28 @@
                 {
                     "match": "\\w+",
                     "name": "storage.type.generic.kotlin"
+                }
+            ]
+        },
+        "typedefs": {
+            "begin": "(?=\\s*(?:type))",
+            "end": "(?=$)",
+            "patterns": [
+                {
+                    "match": "\\b(type)\\b",
+                    "name": "keyword.other.kotlin"
+                },
+                {
+                    "begin": "<",
+                    "end": ">",
+                    "patterns": [
+                        { 
+                            "include": "#generics" 
+                        }
+                    ]
+                },
+                {
+                    "include": "#expressions"
                 }
             ]
         },

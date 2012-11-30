@@ -29,7 +29,6 @@ TODO
 ----
 * add anonymous classes
 * add namespace
-* add typedef
 * add closures handling
 * take scrot from this file: https://github.com/abreslav/life/blob/master/src/core/Board.kt
 * test the package with https://github.com/abreslav/introduction-to-kotlin/tree/master/kotlin-examples

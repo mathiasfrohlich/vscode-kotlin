@@ -39,6 +39,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#typedefs</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#classes</string>
 		</dict>
 		<dict>
@@ -881,6 +885,39 @@
 					</dict>
 					<key>name</key>
 					<string>string.quoted.single.kotlin</string>
+				</dict>
+			</array>
+		</dict>
+		<key>typedefs</key>
+		<dict>
+			<key>begin</key>
+			<string>(?=\s*(?:type))</string>
+			<key>end</key>
+			<string>(?=$)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(type)\b</string>
+					<key>name</key>
+					<string>keyword.other.kotlin</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>&lt;</string>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#generics</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#expressions</string>
 				</dict>
 			</array>
 		</dict>
