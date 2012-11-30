@@ -34,8 +34,8 @@ TODO
 * agregate assignment into one 
 * add closures handling
 * add support for functions that returns many values
-* add support for labels
 * take scrot from this file: https://github.com/abreslav/life/blob/master/src/core/Board.kt
+* test the package with https://github.com/abreslav/introduction-to-kotlin/tree/master/kotlin-examples
 
 Contribution
 ------------

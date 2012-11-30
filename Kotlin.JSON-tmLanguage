@@ -535,6 +535,31 @@
         "strings": {
             "patterns": [
                 {
+                    "begin": "\"\"\"", 
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.begin.kotlin"
+                        }
+                    }, 
+                    "end": "\"\"\"", 
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.kotlin"
+                        }
+                    }, 
+                    "name": "string.quoted.third.kotlin", 
+                    "patterns": [
+                        {
+                            "match": "(\\$\\w+|\\$\\{[^\\}]+\\})",
+                            "name": "variable.parameter.template.kotlin"
+                        },
+                        {
+                            "match": "\\\\.", 
+                            "name": "constant.character.escape.kotlin"
+                        }
+                    ]
+                },
+                {
                     "begin": "\"", 
                     "beginCaptures": {
                         "0": {
@@ -616,12 +641,8 @@
         "keywords": {
             "patterns": [
                 {
-                    "match": "\\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref|internal|data)\\b",
+                    "match": "\\b(var|val|public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref|internal|data)\\b",
                     "name": "storage.modifier.kotlin"
-                },
-                {
-                    "match": "\\b(var|val)\\b", 
-                    "name": "keyword.operator.assignment.kotlin"
                 },
                 {
                     "match": "\\b(try|catch|finally|throw)\\b", 

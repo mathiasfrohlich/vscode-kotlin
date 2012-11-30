@@ -601,15 +601,9 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref|internal|data)\b</string>
+					<string>\b(var|val|public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|ref|internal|data)\b</string>
 					<key>name</key>
 					<string>storage.modifier.kotlin</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(var|val)\b</string>
-					<key>name</key>
-					<string>keyword.operator.assignment.kotlin</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -741,6 +735,45 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>begin</key>
+					<string>"""</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.kotlin</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"""</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.kotlin</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.third.kotlin</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>(\$\w+|\$\{[^\}]+\})</string>
+							<key>name</key>
+							<string>variable.parameter.template.kotlin</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\\.</string>
+							<key>name</key>
+							<string>constant.character.escape.kotlin</string>
+						</dict>
+					</array>
+				</dict>
 				<dict>
 					<key>begin</key>
 					<string>"</string>
