@@ -85,6 +85,12 @@
 					<array>
 						<dict>
 							<key>match</key>
+							<string>\b(object)\b</string>
+							<key>name</key>
+							<string>keyword.other.kotlin</string>
+						</dict>
+						<dict>
+							<key>match</key>
 							<string>\w+</string>
 							<key>name</key>
 							<string>entity.name.type.class.kotlin</string>
