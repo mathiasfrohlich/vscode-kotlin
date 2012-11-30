@@ -15,6 +15,16 @@ The following things already implemented:
 Download
 --------
 
+
+Instalation
+-----------
+
+There are three ways to install Kotlin Sublime Package:
+
+- 123
+- 12
+- 1
+
 TODO
 ----
 * add anonymous classes
@@ -25,6 +35,7 @@ TODO
 * add closures handling
 * add support for functions that returns many values
 * add support for labels
+* take scrot from this project: https://github.com/abreslav/kotlin-euler
 
 Contribution
 ------------
