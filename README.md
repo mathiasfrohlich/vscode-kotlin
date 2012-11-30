@@ -35,7 +35,7 @@ TODO
 * add closures handling
 * add support for functions that returns many values
 * add support for labels
-* take scrot from this project: https://github.com/abreslav/kotlin-euler
+* take scrot from this file: https://github.com/abreslav/life/blob/master/src/core/Board.kt
 
 Contribution
 ------------
