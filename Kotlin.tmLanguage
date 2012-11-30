@@ -669,7 +669,7 @@
 					<key>match</key>
 					<string>(#)</string>
 					<key>name</key>
-					<string>keyword.operator.multitype.kotlin</string>
+					<string>keyword.operator.tuple.kotlin</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -950,7 +950,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.multitype.kotlin</string>
+							<string>keyword.operator.tuple.kotlin</string>
 						</dict>
 					</dict>
 					<key>end</key>

@@ -123,7 +123,7 @@
                     "begin": "(#)\\(",
                     "beginCaptures": {
                         "1": {
-                            "name": "keyword.operator.multitype.kotlin"
+                            "name": "keyword.operator.tuple.kotlin"
                         }
                     },
                     "end": "\\)",
@@ -700,7 +700,7 @@
                 },
                 {
                     "match": "(#)", 
-                    "name": "keyword.operator.multitype.kotlin"
+                    "name": "keyword.operator.tuple.kotlin"
                 },
                 {
                     "match": "(;)", 
