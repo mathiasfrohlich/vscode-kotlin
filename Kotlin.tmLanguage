@@ -667,7 +667,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>;</string>
+					<string>(#)</string>
+					<key>name</key>
+					<string>keyword.operator.multitype.kotlin</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(;)</string>
 					<key>name</key>
 					<string>punctuation.terminator.kotlin</string>
 				</dict>
@@ -933,6 +939,27 @@
 						<dict>
 							<key>include</key>
 							<string>#keywords</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(#)\(</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.multitype.kotlin</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expressions</string>
 						</dict>
 					</array>
 				</dict>

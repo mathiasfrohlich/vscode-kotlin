@@ -118,6 +118,20 @@
                             "include": "#keywords" 
                         }
                     ]
+                },
+                {
+                    "begin": "(#)\\(",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.multitype.kotlin"
+                        }
+                    },
+                    "end": "\\)",
+                    "patterns": [
+                        { 
+                            "include": "#expressions" 
+                        }
+                    ]
                 }
             ]
         },
@@ -683,9 +697,13 @@
                 {
                     "match": "(!|&&|\\|\\|)", 
                     "name": "keyword.operator.logical.kotlin"
-                }, 
+                },
                 {
-                    "match": ";", 
+                    "match": "(#)", 
+                    "name": "keyword.operator.multitype.kotlin"
+                },
+                {
+                    "match": "(;)", 
                     "name": "punctuation.terminator.kotlin"
                 }
             ]
