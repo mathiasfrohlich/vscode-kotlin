@@ -117,10 +117,6 @@
                     "name": "storage.type.buildin.array.kotlin"
                 },
                 {
-                    "match": "(->)",
-                    "name": "keyword.operator.declaration.kotlin"
-                },
-                {
                     "begin": "\\b(Array|List|Map)<\\b",
                     "beginCaptures": {
                         "1": {
@@ -171,6 +167,19 @@
                             "include": "#statements"
                         }
                     ]
+                },
+                {
+                    "begin": "\\(",
+                    "end": "\\)",
+                    "patterns": [
+                        { 
+                            "include": "#types" 
+                        }
+                    ]
+                },
+                {
+                    "match": "(->)",
+                    "name": "keyword.operator.declaration.kotlin"
                 }
             ]
         },
