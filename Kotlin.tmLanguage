@@ -39,7 +39,7 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#top-level-objects</string>
+			<string>#statements</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -152,23 +152,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#classes</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#functions</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#variables</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#getters-and-setters</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#expressions</string>
+							<string>#statements</string>
 						</dict>
 					</array>
 				</dict>
@@ -369,15 +353,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#variables</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#expressions</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#functions</string>
+							<string>#statements</string>
 						</dict>
 					</array>
 				</dict>
@@ -688,7 +664,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#top-level-objects</string>
+							<string>#statements</string>
 						</dict>
 					</array>
 				</dict>
@@ -749,6 +725,40 @@
 					<string>\w+</string>
 					<key>name</key>
 					<string>variable.parameter.function.kotlin</string>
+				</dict>
+			</array>
+		</dict>
+		<key>statements</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#namespaces</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#typedefs</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#classes</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#functions</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variables</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#getters-and-setters</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#expressions</string>
 				</dict>
 			</array>
 		</dict>
@@ -893,40 +903,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>top-level-objects</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#namespaces</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#typedefs</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#classes</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#functions</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#variables</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#getters-and-setters</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#expressions</string>
-				</dict>
-			</array>
-		</dict>
 		<key>typedefs</key>
 		<dict>
 			<key>begin</key>
@@ -1042,6 +1018,19 @@
 						<dict>
 							<key>include</key>
 							<string>#expressions</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\{</string>
+					<key>end</key>
+					<string>\}</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#statements</string>
 						</dict>
 					</array>
 				</dict>

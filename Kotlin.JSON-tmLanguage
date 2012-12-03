@@ -20,11 +20,11 @@
             "include": "#imports"
         },
         {
-            "include": "#top-level-objects"
+            "include": "#statements"
         }
     ],
     "repository": {
-        "top-level-objects": {
+        "statements": {
             "patterns": [
                 {
                     "include": "#namespaces"
@@ -100,7 +100,7 @@
                     "end": "\\}",
                     "patterns": [
                         {
-                            "include": "#top-level-objects" 
+                            "include": "#statements" 
                         }
                     ]
                 }
@@ -160,6 +160,15 @@
                     "patterns": [
                         { 
                             "include": "#expressions" 
+                        }
+                    ]
+                },
+                {
+                    "begin": "\\{",
+                    "end": "\\}",
+                    "patterns": [
+                        { 
+                            "include": "#statements"
                         }
                     ]
                 }
@@ -282,19 +291,7 @@
                     "end": "\\}",
                     "patterns": [
                         {
-                            "include": "#classes"
-                        },
-                        {
-                            "include": "#functions"
-                        },
-                        {
-                            "include": "#variables" 
-                        },
-                        {
-                            "include": "#getters-and-setters"
-                        },
-                        { 
-                            "include": "#expressions"
+                            "include": "#statements"
                         }
                     ]
                 }
@@ -509,13 +506,7 @@
                     "end": "(?=\\})", 
                     "patterns": [
                         {
-                            "include": "#variables"
-                        },
-                        {
-                            "include": "#expressions"
-                        },
-                        {
-                            "include": "#functions"
+                            "include": "#statements"
                         }
                     ]  
                 },
