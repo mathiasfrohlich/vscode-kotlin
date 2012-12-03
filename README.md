@@ -26,7 +26,9 @@ There are three ways to install Kotlin Sublime Package:
 
 - Using archived package (<code>kotlin.sublime-package</code>)
 - Using version control system (GitHub)
-- Using raw files (<code>Kotlin.tmLanguage</code>) from
+- Using raw files (<code>Kotlin.tmLanguage</code>) from repository tree
+
+There is [an instruction](http://sublimetext.info/docs/en/extensibility/packages.html) with detailed steps for any type of instalation.
 
 Contribution
 ------------
@@ -46,7 +48,7 @@ Links
 
 * https://github.com/vkostyukov/kotlin-sublime-package
 * http://www.sublimetext.com/
-* http://jetbrains.com/kotlin
+* http://kotlin.jetbrains.org/
 
 ----
 by [Vladimir Kostyukov](http://vkostyukov.ru), 2012
