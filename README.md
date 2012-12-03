@@ -16,7 +16,7 @@ Download
 --------
 
 - The latest avaliable archived package: [Kotlin.sublime-package](https://github.com/vkostyukov/kotlin-sublime-package/archive/master.zip)
-- Tagged zip:
+- Tagged zip: [kotlin-sublime-package-1.0.zip](https://github.com/vkostyukov/kotlin-sublime-package/archive/kotlin-sublime-package-1.0.zip)
 - Current zipball: [kotlin-sublime-package-master.zip](https://github.com/vkostyukov/kotlin-sublime-package/archive/master.zip)
 
 Instalation
