@@ -1,9 +1,9 @@
 Kotlin Sublime Text 2 Package 
 =============================
 
-This is [Sumblime Text 2](http://www.sublimetext.com/) package for [Kotlin](http://jetbrains.com/kotlin) programming language.
+This is [Sumblime Text 2](http://www.sublimetext.com/) package for [Kotlin](http://kotlin.jetbrains.org/) programming language.
 
-*TODO* put image here
+![Kotlin Sublime Text 2 Pacakge Screenshoot](https://raw.github.com/vkostyukov/kotlin-sublime-package/master/scrot.png)
 
 Overview
 --------
@@ -24,11 +24,6 @@ There are three ways to install Kotlin Sublime Package:
 - 123
 - 12
 - 1
-
-TODO
-----
-* take scrot from this file: https://github.com/abreslav/life/blob/master/src/core/Board.kt
-* test the package with https://github.com/abreslav/introduction-to-kotlin/tree/master/kotlin-examples
 
 Contribution
 ------------
