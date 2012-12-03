@@ -15,7 +15,7 @@ The following modules already implemented:
 Download
 --------
 
-- The latest avaliable archived package: [Kotlin.sublime-package](https://github.com/vkostyukov/kotlin-sublime-package/archive/master.zip)
+- The latest avaliable archived package: [Kotlin.sublime-package](https://github.com/downloads/vkostyukov/kotlin-sublime-package/Kotlin.sublime-package)
 - Tagged zip: [kotlin-sublime-package-1.0.zip](https://github.com/vkostyukov/kotlin-sublime-package/archive/kotlin-sublime-package-1.0.zip)
 - Current zipball: [kotlin-sublime-package-master.zip](https://github.com/vkostyukov/kotlin-sublime-package/archive/master.zip)
 
