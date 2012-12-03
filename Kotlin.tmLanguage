@@ -39,27 +39,7 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#typedefs</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#classes</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#functions</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#variables</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#getters-and-setters</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#expressions</string>
+			<string>#top-level-objects</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -382,9 +362,9 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>{</string>
+					<string>\{</string>
 					<key>end</key>
-					<string>(?=})</string>
+					<string>(?=\})</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -689,6 +669,31 @@
 				</dict>
 			</array>
 		</dict>
+		<key>namespaces</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(namespace)\b</string>
+					<key>name</key>
+					<string>keyword.other.kotlin</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\{</string>
+					<key>end</key>
+					<string>\}</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#top-level-objects</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>parameters</key>
 		<dict>
 			<key>patterns</key>
@@ -885,6 +890,40 @@
 					</dict>
 					<key>name</key>
 					<string>string.quoted.single.kotlin</string>
+				</dict>
+			</array>
+		</dict>
+		<key>top-level-objects</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#namespaces</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#typedefs</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#classes</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#functions</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variables</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#getters-and-setters</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#expressions</string>
 				</dict>
 			</array>
 		</dict>

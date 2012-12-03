@@ -20,25 +20,35 @@
             "include": "#imports"
         },
         {
-            "include": "#typedefs"
-        },
-        {
-            "include": "#classes"
-        },
-        {
-            "include": "#functions"
-        },
-        {
-            "include": "#variables"
-        },
-        {
-            "include": "#getters-and-setters"
-        },
-        {
-            "include": "#expressions"
+            "include": "#top-level-objects"
         }
     ],
     "repository": {
+        "top-level-objects": {
+            "patterns": [
+                {
+                    "include": "#namespaces"
+                },
+                {
+                    "include": "#typedefs"
+                },
+                {
+                    "include": "#classes"
+                },
+                {
+                    "include": "#functions"
+                },
+                {
+                    "include": "#variables"
+                },
+                {
+                    "include": "#getters-and-setters"
+                },
+                {
+                    "include": "#expressions"
+                }
+            ]
+        },
         "comments": {
             "patterns": [
                 {
@@ -76,6 +86,23 @@
                         }
                 },
                 "match": "^\\s*(import)\\s+[^ $]+\\s+(as)?"
+                }
+            ]
+        },
+        "namespaces": {
+            "patterns": [
+                {
+                    "match": "\\b(namespace)\\b",
+                    "name": "keyword.other.kotlin"
+                },
+                {
+                    "begin": "\\{",
+                    "end": "\\}",
+                    "patterns": [
+                        {
+                            "include": "#top-level-objects" 
+                        }
+                    ]
                 }
             ]
         },
@@ -478,8 +505,8 @@
                     ]
                 },
                 {
-                    "begin": "{", 
-                    "end": "(?=})", 
+                    "begin": "\\{", 
+                    "end": "(?=\\})", 
                     "patterns": [
                         {
                             "include": "#variables"

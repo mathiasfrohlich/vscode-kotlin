@@ -28,8 +28,8 @@ There are three ways to install Kotlin Sublime Package:
 TODO
 ----
 * add anonymous classes
-* add namespace
 * add closures handling
+* fix bug with getters and setters at one line
 * take scrot from this file: https://github.com/abreslav/life/blob/master/src/core/Board.kt
 * test the package with https://github.com/abreslav/introduction-to-kotlin/tree/master/kotlin-examples
 
