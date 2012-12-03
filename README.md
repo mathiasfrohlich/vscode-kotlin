@@ -15,15 +15,18 @@ The following things already implemented:
 Download
 --------
 
+- The latest avaliable archived package: [Kotlin.sublime-package](https://github.com/vkostyukov/kotlin-sublime-package/archive/master.zip)
+- Tagged zip:
+- Current zipball: [kotlin-sublime-package-master.zip](https://github.com/vkostyukov/kotlin-sublime-package/archive/master.zip)
 
 Instalation
 -----------
 
 There are three ways to install Kotlin Sublime Package:
 
-- 123
-- 12
-- 1
+- Using archived package (<code>kotlin.sublime-package</code>)
+- Using version control system (GitHub)
+- Using raw files (<code>Kotlin.tmLanguage</code>) from
 
 Contribution
 ------------
