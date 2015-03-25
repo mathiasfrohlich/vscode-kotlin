@@ -231,11 +231,11 @@
             ]
         },
         "classes": {
-            "begin": "(?=\\s*(?:class|object|trait))",
+            "begin": "(?=\\s*(?:companion|class|object|trait))",
             "end": "}|(?=$)",
             "patterns": [
                 {
-                    "begin": "\\b(class|object|trait)\\b",
+                    "begin": "\\b(companion\s*)?(class|object|trait)\\b",
                     "beginCaptures": {
                         "1": {
                             "name": "keyword.other.kotlin"
