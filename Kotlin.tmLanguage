@@ -47,14 +47,14 @@
 		<key>classes</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\s*(?:class|object|trait))</string>
+			<string>(?=\s*(?:companion|class|object|trait))</string>
 			<key>end</key>
 			<string>}|(?=$)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\b(class|object|trait)\b</string>
+					<string>\b(companion\s*)?(class|object|trait)\b</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
