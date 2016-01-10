@@ -1,0 +1,43 @@
+{
+	"name": "Kotlin",
+	"displayName": "Kotlin Language",
+	"description": "Kotlin language support for VS Code",
+	"version": "0.0.1",
+	"publisher": "mathiasfrohlich",
+	"license": "SEE LICENSE IN LICENSE or README.MD",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"icon": "icon.png",
+	"categories": [
+		"Languages"
+	],
+	"bugs": {
+		"url": "https://github.com/mathiasfrohlich/vscode-kotlin/issues"
+	},
+	"homepage": "https://github.com/mathiasfrohlich/vscode-kotlin",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasfrohlich/vscode-kotlin.git"
+	},
+	"keywords": [
+		"Kotlin",
+		"kotlin",
+		"kt",
+		"jetl",
+		"jet"
+	],
+	"contributes": {
+		"languages": [{
+			"id": "kotlin",
+			"aliases": ["Kotlin", "kotlin"],
+			"extensions": [".kt",".jetl",".jet"],
+			"configuration": "./kotlin.configuration.json"
+		}],
+		"grammars": [{
+			"language": "kotlin",
+			"scopeName": "source.Kotlin",
+			"path": "./syntaxes/kotlin.tmLanguage"
+		}]
+	}
+}
