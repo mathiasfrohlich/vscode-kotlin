@@ -24,6 +24,12 @@ Syntax highlighter for Kotlin language
 ### Version 0.0.1
 Initial commit
 
+## Credits
+
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [vscode-docs on GitHub](https://github.com/Microsoft/vscode-docs)
+* [Kotlin.org](https://kotlinlang.org/)
+* [Sublime Text - Kotlin Package](https://github.com/vkostyukov/kotlin-sublime-package)
         
 ## License
 
