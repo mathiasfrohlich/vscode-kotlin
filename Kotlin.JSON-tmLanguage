@@ -719,7 +719,7 @@
                     "name": "keyword.control.catch-exception.kotlin"
                 },
                 {
-                    "match": "\\b(if|then|else|while|for|do|return|when|where|break|continue)\\b", 
+                    "match": "\\b(if|else|while|for|do|return|when|where|break|continue)\\b", 
                     "name": "keyword.control.kotlin"
                 },
                 {
