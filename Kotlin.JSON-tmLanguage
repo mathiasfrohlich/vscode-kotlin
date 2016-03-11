@@ -755,10 +755,6 @@
                     "name": "keyword.operator.logical.kotlin"
                 },
                 {
-                    "match": "(#)", 
-                    "name": "keyword.operator.tuple.kotlin"
-                },
-                {
                     "match": "(;)", 
                     "name": "punctuation.terminator.kotlin"
                 }

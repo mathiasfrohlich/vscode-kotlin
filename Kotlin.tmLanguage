@@ -633,12 +633,6 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(#)</string>
-					<key>name</key>
-					<string>keyword.operator.tuple.kotlin</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>(;)</string>
 					<key>name</key>
 					<string>punctuation.terminator.kotlin</string>
