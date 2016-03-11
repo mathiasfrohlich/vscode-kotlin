@@ -727,7 +727,7 @@
                     "name": "keyword.operator.kotlin"
                 },
                 {
-                    "match": "(==|!=|<=|>=|<>|<|>)", 
+                    "match": "(==|!=|===|!==|<=|>=|<|>)", 
                     "name": "keyword.operator.comparison.kotlin"
                 }, 
                 {
@@ -746,6 +746,10 @@
                     "match": "(\\-\\-|\\+\\+)", 
                     "name": "keyword.operator.increment-decrement.kotlin"
                 }, 
+                {
+                    "match": "(\\+=|\\-=|\\*=|\\/=)",
+                    "name": "keyword.operator.arithmetic.assign.kotlin"
+                },
                 {
                     "match": "(\\-|\\+|\\*|\\/|%)", 
                     "name": "keyword.operator.arithmetic.kotlin"

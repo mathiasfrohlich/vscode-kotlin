@@ -591,7 +591,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(==|!=|&lt;=|&gt;=|&lt;&gt;|&lt;|&gt;)</string>
+					<string>(==|!=|===|!==|&lt;=|&gt;=|&lt;|&gt;)</string>
 					<key>name</key>
 					<string>keyword.operator.comparison.kotlin</string>
 				</dict>
@@ -625,6 +625,12 @@
 					<key>name</key>
 					<string>keyword.operator.arithmetic.kotlin</string>
 				</dict>
+                <dict>
+                    <key>match</key>
+                    <string>(\+=|\-=|\*=|\/=)</string>
+                    <key>name</key>
+                    <string>keyword.operator.arithmetic.assign.kotlin</string>
+                </dict>
 				<dict>
 					<key>match</key>
 					<string>(!|&amp;&amp;|\|\|)</string>
