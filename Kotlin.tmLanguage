@@ -936,7 +936,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte)\b</string>
+					<string>\b(Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|dynamic)\b</string>
 					<key>name</key>
 					<string>storage.type.buildin.kotlin</string>
 				</dict>

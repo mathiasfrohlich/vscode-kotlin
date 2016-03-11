@@ -109,7 +109,7 @@
         "types": {
             "patterns": [
                 {
-                    "match": "\\b(Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte)\\b", 
+                    "match": "\\b(Any|Unit|String|Int|Boolean|Char|Long|Double|Float|Short|Byte|dynamic)\\b", 
                     "name": "storage.type.buildin.kotlin"
                 },
                 {
