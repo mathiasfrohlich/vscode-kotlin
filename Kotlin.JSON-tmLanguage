@@ -711,7 +711,7 @@
         "keywords": {
             "patterns": [
                 {
-                    "match": "\\b(var|val|public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|internal|data|tailrec|operator|infix)\\b",
+                    "match": "\\b(var|val|public|private|protected|abstract|final|enum|open|attribute|annotation|override|inline|var|val|vararg|lazy|in|out|internal|data|tailrec|operator|infix|const)\\b",
                     "name": "storage.modifier.kotlin"
                 },
                 {
