@@ -637,6 +637,12 @@
 					<key>name</key>
 					<string>keyword.operator.logical.kotlin</string>
 				</dict>
+                <dict>
+                    <key>match</key>
+                    <string>(\.\.)</string>
+                    <key>name</key>
+                    <string>keyword.operator.range.kotlin</string>
+                </dict>
 				<dict>
 					<key>match</key>
 					<string>(;)</string>

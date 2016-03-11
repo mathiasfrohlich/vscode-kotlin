@@ -751,6 +751,10 @@
                     "name": "keyword.operator.arithmetic.assign.kotlin"
                 },
                 {
+                    "match": "(\\.\\.)",
+                    "name": "keyword.operator.range.kotlin"
+                },
+                {
                     "match": "(\\-|\\+|\\*|\\/|%)", 
                     "name": "keyword.operator.arithmetic.kotlin"
                 }, 
