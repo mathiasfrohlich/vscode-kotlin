@@ -1,6 +1,6 @@
 {   "name": "Kotlin",
     "scopeName": "source.Kotlin",
-    "fileTypes": ["kt", "jetl", "jet"],
+    "fileTypes": ["kt", "kts"],
     "patterns": [
         {
             "include": "#comments"

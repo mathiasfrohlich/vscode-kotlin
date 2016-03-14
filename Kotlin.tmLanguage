@@ -5,8 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>kt</string>
-		<string>jetl</string>
-		<string>jet</string>
+		<string>kts</string>
 	</array>
 	<key>name</key>
 	<string>Kotlin</string>
