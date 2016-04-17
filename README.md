@@ -24,6 +24,9 @@ Syntax highlighter for Kotlin language
 ### Version 0.0.1
 Initial commit
 
+### Version 1.0
+Updated for Kotlin 1.0
+
 ## Credits
 
 * [Visual Studio Code](https://code.visualstudio.com/)
