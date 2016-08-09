@@ -37,7 +37,7 @@
 		"grammars": [{
 			"language": "kotlin",
 			"scopeName": "source.Kotlin",
-			"path": "./syntaxes/kotlin.tmLanguage"
+			"path": "./syntaxes/Kotlin.tmLanguage"
 		}]
 	},
 	"devDependencies": {
