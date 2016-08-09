@@ -15,17 +15,22 @@ Syntax highlighter for Kotlin language
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request
 
-## Source
+## Sourc7
 
 [Github](https://github.com/mathiasfrohlich/vscode-kotlin)
         
 ## Change Log
 
 ### Version 0.0.1
-Initial commit
+* Initial commit
 
-### Version 1.0
-Updated for Kotlin 1.0
+### Version 1.0.0
+* Updated for Kotlin 1.0
+
+### Version 1.1.0
+This version happened thanks to a community contribution.
+Thanks to https://github.com/francis36012
+* Fix issue of loading the Kotlin language file
 
 ## Credits
 

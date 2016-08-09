@@ -2,7 +2,7 @@
 	"name": "Kotlin",
 	"displayName": "Kotlin Language",
 	"description": "Kotlin language support for VS Code",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"publisher": "mathiasfrohlich",
 	"license": "SEE LICENSE IN LICENSE or README.MD",
 	"engines": {
