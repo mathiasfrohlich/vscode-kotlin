@@ -33,7 +33,7 @@ Thanks to https://github.com/francis36012
 * Fix issue of loading the Kotlin language file
 
 ### Version 1.2.0
-This version happened thanks to a community contribution.  
+This version happened thanks to a community contribution.
 Thanks to https://github.com/Jonatino
 * Added const and typealias syntax highlighting
 
