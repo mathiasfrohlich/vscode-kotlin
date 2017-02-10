@@ -1,9 +1,9 @@
 Kotlin Sublime Text 2 Package 
 =============================
 
-This is [Sumblime Text 2](http://www.sublimetext.com/) package for [Kotlin](http://kotlin.jetbrains.org/) programming language.
+This is [Sublime Text 2](http://www.sublimetext.com/) package for [Kotlin](http://kotlin.jetbrains.org/) programming language.
 
-![Kotlin Sublime Text 2 Pacakge Screenshoot](https://raw.github.com/vkostyukov/kotlin-sublime-package/master/scrot.png)
+![Kotlin Sublime Text 2 Package Screenshoot](https://raw.github.com/vkostyukov/kotlin-sublime-package/master/scrot.png)
 
 Overview
 --------
@@ -28,7 +28,7 @@ There are three ways to install Kotlin Sublime Package:
 - Using version control system (GitHub)
 - Using raw files (<code>Kotlin.tmLanguage</code>) from repository tree
 
-There is [an instruction](http://sublimetext.info/docs/en/extensibility/packages.html) with detailed steps for any type of instalation.
+There is [an instruction](http://sublimetext.info/docs/en/extensibility/packages.html) with detailed steps for any type of installation.
 
 Contribution
 ------------
@@ -51,4 +51,4 @@ Links
 * http://kotlin.jetbrains.org/
 
 ----
-by [Vladimir Kostyukov](http://vkostyukov.ru), 2012
+by [Vladimir Kostyukov](https://twitter.com/vkostyukov), 2017
