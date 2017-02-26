@@ -24,14 +24,13 @@
 		"Kotlin",
 		"kotlin",
 		"kt",
-		"jetl",
-		"jet"
+		"kts"
 	],
 	"contributes": {
 		"languages": [{
 			"id": "kotlin",
 			"aliases": ["Kotlin", "kotlin"],
-			"extensions": [".kt",".jetl",".jet"],
+			"extensions": [".kt",".kts"],
 			"configuration": "./kotlin.configuration.json"
 		}],
 		"grammars": [{
