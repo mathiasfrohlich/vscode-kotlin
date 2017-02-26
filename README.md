@@ -18,7 +18,7 @@ Syntax highlighter for Kotlin language
 ## Sourc7
 
 [Github](https://github.com/mathiasfrohlich/vscode-kotlin)
-        
+
 ## Change Log
 
 ### Version 0.0.1
@@ -37,13 +37,21 @@ This version happened thanks to a community contribution.
 Thanks to https://github.com/Jonatino
 * Added const and typealias syntax highlighting
 
+### Version 1.3.0
+This version happened thanks to a community contribution.
+Thanks to https://github.com/sommd, http://github.com/vkostyukov
+* Update Kotlin language file to the latest one from https://github.com/vkostyukov/kotlin-sublime-package
+    * Add highlighting for `companion`, `interface`, `dynamic`, `===`, `!===`, `+=`, `-=`, `*=`, `/=` and `..`
+    * Remove highlighting for `trait`, `then` and `<>`
+    * Remove `.jetl` and `.jet` file extensions
+
 ## Credits
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [vscode-docs on GitHub](https://github.com/Microsoft/vscode-docs)
 * [Kotlin.org](https://kotlinlang.org/)
 * [Sublime Text - Kotlin Package](https://github.com/vkostyukov/kotlin-sublime-package)
-        
+
 ## License
 
 [Apache License](https://raw.githubusercontent.com/mathiasfrohlich/vscode-kotlin/master/LICENSE)
