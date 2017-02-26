@@ -53,7 +53,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\b(companion\s*)?(class|object|interface)\b</string>
+					<string>\b(class|(companion\s*)?object|interface)\b</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
