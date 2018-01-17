@@ -4,8 +4,8 @@ Syntax highlighter for Kotlin language
 
 ## How to install
 * Install [Visual Studio Code](https://code.visualstudio.com/)
-* Open `View -> Command Palette... and type ext install kotlin language`
-* Restart Visual Studio Code
+* Open `View -> Command Palette...` and type `ext install kotlin language`
+* Restart or reload Visual Studio Code
 
 ## Contributing
 
@@ -15,7 +15,7 @@ Syntax highlighter for Kotlin language
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request
 
-## Sourc7
+## Source
 
 [Github](https://github.com/mathiasfrohlich/vscode-kotlin)
 
