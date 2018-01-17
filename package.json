@@ -27,19 +27,49 @@
 		"kts"
 	],
 	"contributes": {
-		"languages": [{
-			"id": "kotlin",
-			"aliases": ["Kotlin", "kotlin"],
-			"extensions": [".kt",".kts"],
-			"configuration": "./kotlin.configuration.json"
-		}],
-		"grammars": [{
-			"language": "kotlin",
-			"scopeName": "source.Kotlin",
-			"path": "./syntaxes/Kotlin.tmLanguage"
-		}]
+		"languages": [
+			{
+				"id": "kotlin",
+				"aliases": [
+					"Kotlin",
+					"kotlin"
+				],
+				"extensions": [
+					".kt"
+				],
+				"configuration": "./kotlin.configuration.json"
+			},
+			{
+				"id": "kotlinscript",
+				"aliases": [
+					"Kotlinscript",
+					"kotlinscript"
+				],
+				"extensions": [
+					".kts"
+				],
+				"configuration": "./kotlin.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "kotlin",
+				"scopeName": "source.Kotlin",
+				"path": "./syntaxes/Kotlin.tmLanguage"
+			},
+			{
+				"language": "kotlinscript",
+				"scopeName": "source.Kotlin",
+				"path": "./syntaxes/Kotlin.tmLanguage"
+			}
+		]
 	},
 	"devDependencies": {
 		"vscode": "0.11.x"
+	},
+	"__metadata": {
+		"id": "d36bad53-910d-481a-a7ee-8992450665f6",
+		"publisherId": "6c0520a7-c10a-45a4-b172-d75ca7dca2c1",
+		"publisherDisplayName": "mathiasfrohlich"
 	}
 }
