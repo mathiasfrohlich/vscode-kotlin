@@ -6,7 +6,7 @@
 	"publisher": "mathiasfrohlich",
 	"license": "SEE LICENSE IN LICENSE or README.MD",
 	"engines": {
-		"vscode": "^0.10.8"
+		"vscode": "^1.8.0"
 	},
 	"icon": "artwork/icon.png",
 	"categories": [
@@ -61,6 +61,16 @@
 				"language": "kotlinscript",
 				"scopeName": "source.Kotlin",
 				"path": "./syntaxes/Kotlin.tmLanguage"
+			},
+			{
+				"scopeName": "markdown.Kotlin.codeblock",
+				"path": "./syntaxes/codeblock.json",
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.kotlin": "kotlin"
+				}
 			}
 		]
 	},
