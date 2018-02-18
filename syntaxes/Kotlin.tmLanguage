@@ -549,14 +549,14 @@
 							<key>name</key>
 							<string>keyword.other.kotlin</string>
 						</dict>
-						<key>2</key>
+						<key>4</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.other.kotlin</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\s*(import)\s+[^ $]+\s+(as)?</string>
+					<string>^\s*(import)\s+[^ $.]+(\.([`][^$`]+[`]|[^` $.]+))+\s+(as)?</string>
 				</dict>
 			</array>
 		</dict>
