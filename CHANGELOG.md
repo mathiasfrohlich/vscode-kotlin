@@ -1,5 +1,10 @@
 
-# Change log
+# Changelog
+
+## 1.5.0
+* Fix highlighting for backticks in imports
+* Add highlighting for Kotlin in markdown documents
+
 
 ## 1.4.0
 This version happened thanks to a community contribution.  
