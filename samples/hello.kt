@@ -1,5 +1,8 @@
 package hello
 
+import android.support.v7.app.AppCompatActivity
+import org.amshove.kluent.`should equal`
+
 interface IGreeter {
     fun greet()
 }
