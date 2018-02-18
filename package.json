@@ -2,9 +2,12 @@
 	"name": "Kotlin",
 	"displayName": "Kotlin Language",
 	"description": "Kotlin language support for VS Code",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"publisher": "mathiasfrohlich",
-	"license": "SEE LICENSE IN LICENSE or README.MD",
+	"license": "Apache-2.0",
+	"scripts": {
+		"package": "./node_modules/.bin/vsce package"
+	},
 	"engines": {
 		"vscode": "^1.8.0"
 	},
@@ -75,7 +78,9 @@
 		]
 	},
 	"devDependencies": {
-		"vscode": "0.11.x"
+		"vsce": "^1.36.2",
+		"vscode": "0.11.x",
+		"vso-node-api": "6.1.2-preview"
 	},
 	"__metadata": {
 		"id": "d36bad53-910d-481a-a7ee-8992450665f6",
