@@ -1,3 +1,7 @@
+[![](https://vsmarketplacebadge.apphb.com/version-short/mathiasfrohlich.Kotlin.svg)](https://marketplace.visualstudio.com/items?itemName=mathiasfrohlich.Kotlin)
+[![](https://vsmarketplacebadge.apphb.com/installs-short/mathiasfrohlich.Kotlin.svg)](https://marketplace.visualstudio.com/items?itemName=mathiasfrohlich.Kotlin)
+[![](https://vsmarketplacebadge.apphb.com/rating-short/mathiasfrohlich.Kotlin.svg)](https://marketplace.visualstudio.com/items?itemName=mathiasfrohlich.Kotlin)
+
 # Kotlin Language
 
 Syntax highlighting support for the Kotlin language
