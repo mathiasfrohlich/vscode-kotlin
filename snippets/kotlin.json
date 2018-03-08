@@ -2,7 +2,8 @@
     "fun2": {
         "prefix": "fun",
         "body": [
-            "fun (x: Any, y: Any): Unit {",
+            "fun ${1:foo}(${2:bar}: ${3:Any}, ${4:baz}: ${5:Any}): ${6:Unit} {",
+            "\t${0}",
             "}"
         ],
         "description": "Function with 2 parameters"
@@ -10,7 +11,8 @@
     "fun1": {
         "prefix": "fun",
         "body": [
-            "fun (x: Any): Unit {",
+            "fun ${1:foo}(${2:bar}: ${3:Any}): ${4:Unit} {",
+            "\t${0}",
             "}"
         ],
         "description": "Function with 1 parameter"
@@ -18,7 +20,8 @@
     "fun0": {
         "prefix": "fun",
         "body": [
-            "fun (): Unit {",
+            "fun ${1:foo}(): Unit {",
+            "\t${0}",
             "}"
         ],
         "description": "Function with 0 parameters"
@@ -26,7 +29,8 @@
     "void": {
         "prefix": "void",
         "body": [
-            "fun () {",
+            "fun ${1:foo}() {",
+            "\t${0}",
             "}"
         ],
         "description": "Function that returns nothing"
@@ -35,8 +39,25 @@
         "prefix": "main",
         "body": [
             "fun main(args: Array<String>) {",
+            "\t${0}",
             "}"
         ],
         "description": "main() function"
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for (${1:i} in ${2:iterable}) {",
+            "\t${0}",
+            "}"
+        ]
+    },
+    "try": {
+        "prefix": "try",
+        "body": [
+            "try {",
+            "\t${0}",
+            "}"
+        ]
     }
 }
