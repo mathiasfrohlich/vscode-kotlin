@@ -1,0 +1,42 @@
+{
+    "fun2": {
+        "prefix": "fun",
+        "body": [
+            "fun (x: Any, y: Any): Unit {",
+            "}"
+        ],
+        "description": "Function with 2 parameters"
+    },
+    "fun1": {
+        "prefix": "fun",
+        "body": [
+            "fun (x: Any): Unit {",
+            "}"
+        ],
+        "description": "Function with 1 parameter"
+    },
+    "fun0": {
+        "prefix": "fun",
+        "body": [
+            "fun (): Unit {",
+            "}"
+        ],
+        "description": "Function with 0 parameters"
+    },
+    "void": {
+        "prefix": "void",
+        "body": [
+            "fun () {",
+            "}"
+        ],
+        "description": "Function that returns nothing"
+    },
+    "main": {
+        "prefix": "main",
+        "body": [
+            "fun main(args: Array<String>) {",
+            "}"
+        ],
+        "description": "main() function"
+    }
+}

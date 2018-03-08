@@ -75,7 +75,12 @@
 					"meta.embedded.block.kotlin": "kotlin"
 				}
 			}
-		]
+		],"snippets": [
+        {
+            "language": "kotlin",
+            "path": "./snippets/kotlin.json"
+        }
+    ]
 	},
 	"devDependencies": {
 		"vsce": "^1.36.2",
