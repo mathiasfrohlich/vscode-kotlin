@@ -1,6 +1,7 @@
 package com.example.kotlin
 
 // #region imports
+import java.util.Random as Rand
 import android.support.v7.app.AppCompatActivity
 import org.amshove.kluent.`should equal`
 // #endregion
@@ -53,6 +54,7 @@ object NotANumber : Expr()
 // #endregion
 
 // #region annotation
+@file:JvmName("Foo")
 @Inject
 class InjectedClass @Inject constructor() {
 }
