@@ -27,7 +27,7 @@ in to the command palette.
 We welcome any contributions to help make the extension better. There are several ways you can contribute. 
 
 1. By reporting [issues](https://github.com/mathiasfrohlich/vscode-kotlin/issues)
-2. Making feature [requests]
+2. Making feature [requests](https://github.com/mathiasfrohlich/vscode-kotlin/issues)
 3. Or by contributing code
 
 > Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
