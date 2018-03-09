@@ -4,20 +4,33 @@
 
 # Kotlin Language
 
-Syntax highlighting support for the Kotlin language
+Syntax support for the Kotlin programming language.
+This extension adds basic features to help make writing Kotlin much more pleasant in VSCode
 
-## How to install
-* Install [Visual Studio Code](https://code.visualstudio.com/)
-* Open `View -> Command Palette...` and type `ext install kotlin language`
-* Restart or reload Visual Studio Code
+## Features
+
+* Syntax highlighting
+* Code snippets
+* Region code folding
+
+## Installation
+You can install the plugin by searching for [Kotlin Language extension](https://marketplace.visualstudio.com/items?itemName=mathiasfrohlich.Kotlin) in the extensions market place, or by entering
+
+```
+ext install kotlin language
+```
+
+in to the command palette.
 
 ## Contributing
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request
+We welcome any contributions to help make the extension better. There are several ways you can contribute. 
+
+1. By reporting [issues](https://github.com/mathiasfrohlich/vscode-kotlin/issues)
+2. Making feature [requests]
+3. Or by contributing code
+
+> Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
 
 ## Credits
 
