@@ -23,14 +23,18 @@ fun foo() {
     val x  = Bar::class
     val y = hello
 }
+
+suspend fun SequenceBuilder<Int>.yieldIfOdd(x: Int) {
+    if (x % 2 != 0) yield(x)
+}
 // #endregion
 
 // #region classes
-interface IGreeter {
+interface Greetable {
     fun greet()
 }
 
-open class Greeter: IGreeter {
+open class Greeter: Greetable {
     companion object {
         private const val GREETING = "Hello, World!"
     }

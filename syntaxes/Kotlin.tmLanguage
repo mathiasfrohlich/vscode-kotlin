@@ -676,7 +676,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>\b(var|val|external|public|private|protected|abstract|final|sealed|enum|open|attribute|annotation|override|inline|vararg|lazy|in|out|internal|data|tailrec|operator|infix|const|yield|typealias|typeof|expect|actual)\b</string>
+            <string>\b(var|val|external|public|private|protected|abstract|final|sealed|enum|open|attribute|annotation|override|inline|vararg|in|out|internal|data|tailrec|operator|infix|const|yield|typealias|typeof|expect|actual|reified|suspend)\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
           </dict>
