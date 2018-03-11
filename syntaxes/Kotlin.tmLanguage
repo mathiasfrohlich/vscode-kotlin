@@ -121,31 +121,38 @@
       <key>classes</key>
       <dict>
         <key>begin</key>
-        <string>(?=\s*(?:companion|class|object|interface))</string>
+        <string>(?&lt;!::)(?=\b(?:companion|class|object|interface)\b)</string>
         <key>end</key>
-        <string>}|(?=$)</string>
+        <string>(?=$|\})</string>
         <key>patterns</key>
         <array>
           <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
+          <dict>
             <key>begin</key>
-            <string>\b(class|(companion\s*)?object|interface)\b</string>
+            <string>\b(companion\s*)?(class|object|interface)\b</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.other.kotlin</string>
+                <string>storage.modifier.kotlin</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>storage.modifier.kotlin</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=&lt;|{|\(|:)</string>
+            <string>(?=&lt;|\{|\(|:|$)</string>
             <key>patterns</key>
             <array>
               <dict>
-                <key>match</key>
-                <string>\b(object)\b</string>
-                <key>name</key>
-                <string>keyword.other.kotlin</string>
+                <key>include</key>
+                <string>#comments</string>
               </dict>
               <dict>
                 <key>match</key>
@@ -1056,13 +1063,13 @@
             <key>match</key>
             <string>\b(Nothing|Any|Unit|String|CharSequence|Int|Boolean|Char|Long|Double|Float|Short|Byte|dynamic)\b</string>
             <key>name</key>
-            <string>storage.type.buildin.kotlin</string>
+            <string>storage.type.builtin.kotlin</string>
           </dict>
           <dict>
             <key>match</key>
             <string>\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray)\b</string>
             <key>name</key>
-            <string>storage.type.buildin.array.kotlin</string>
+            <string>storage.type.builtin.array.kotlin</string>
           </dict>
           <dict>
             <key>begin</key>
@@ -1072,7 +1079,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>storage.type.buildin.collection.kotlin</string>
+                <string>storage.type.builtin.collection.kotlin</string>
               </dict>
             </dict>
             <key>end</key>
@@ -1103,27 +1110,6 @@
               <dict>
                 <key>include</key>
                 <string>#keywords</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>(#)\(</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.operator.tuple.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>\)</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#expressions</string>
               </dict>
             </array>
           </dict>

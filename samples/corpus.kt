@@ -12,6 +12,19 @@ fun main(args: Array<String>) {
 }
 // #endregion
 
+// #region variables
+val items = listOf("apple", "banana", "kiwifruit")
+var x = 9
+const var CONSTANT = 99
+// #endregion
+
+// #region functions
+fun foo() {
+    val x  = Bar::class
+    val y = hello
+}
+// #endregion
+
 // #region classes
 interface IGreeter {
     fun greet()
@@ -55,9 +68,13 @@ object NotANumber : Expr()
 
 // #region annotation
 @file:JvmName("Foo")
-@Inject
-class InjectedClass @Inject constructor() {
+private sealed class InjectedClass @Inject constructor() {
+    companion object {
+        
+    }
 }
+annotation class Suspendable
+val f = @Suspendable { Fiber.sleep(10) }
 // #endregion
 
 
