@@ -29,6 +29,12 @@ suspend fun SequenceBuilder<Int>.yieldIfOdd(x: Int) {
 }
 // #endregion
 
+// #region control
+fun foo(node: Node): String? {
+    val parent = node.getParent() ?: return null
+}
+// #endregion
+
 // #region classes
 interface Greetable {
     fun greet()
