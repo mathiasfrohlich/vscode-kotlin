@@ -1,6 +1,15 @@
 
 # Changelog
 
+## 1.6.0
+* Add smart code snippets for `fun` `try` and `for`
+* Add smart bracket matching and autoclosing pair
+* Add `external`, `sealed`, `reified`, `suspend`, `by` and other keywords
+* Add highlighting support for `::`, `?.` and `?:` operators
+* Add highlighting for annotations
+* Add comment region code folding support
+* Improve highlighting for classes and functions with better word boundries.
+
 ## 1.5.0
 * Fix highlighting for backticks in imports
 * Add highlighting for Kotlin in markdown documents
