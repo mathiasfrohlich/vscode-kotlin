@@ -29,6 +29,12 @@ suspend fun SequenceBuilder<Int>.yieldIfOdd(x: Int) {
 }
 
 abstract fun onCreate(savedInstanceState: Bundle?)
+
+fun isOdd(x: Int) = x % 2 != 0
+fun isOdd(s: String) = s == "brillig" || s == "slithy" || s == "tove"
+
+val numbers = listOf(1, 2, 3)
+println(numbers.filter(::isOdd))
 // #endregion
 
 // #region control

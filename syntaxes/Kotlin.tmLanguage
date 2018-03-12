@@ -712,6 +712,12 @@
           </dict>
           <dict>
             <key>match</key>
+            <string>(::)</string>
+            <key>name</key>
+            <string>keyword.operator.reference.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
             <string>(:)</string>
             <key>name</key>
             <string>keyword.operator.declaration.kotlin</string>
