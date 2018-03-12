@@ -730,6 +730,12 @@
           </dict>
           <dict>
             <key>match</key>
+            <string>(\?\.)</string>
+            <key>name</key>
+            <string>keyword.operator.dot.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
             <string>(\?:)</string>
             <key>name</key>
             <string>keyword.operator.elvis.kotlin</string>

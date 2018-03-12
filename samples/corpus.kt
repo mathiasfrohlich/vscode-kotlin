@@ -21,7 +21,7 @@ const var CONSTANT = 99
 // #region functions
 fun foo() {
     val x  = Bar::class
-    val y = hello
+    val y = hello?.test
 }
 
 suspend fun SequenceBuilder<Int>.yieldIfOdd(x: Int) {
