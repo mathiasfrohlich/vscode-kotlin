@@ -27,6 +27,8 @@ fun foo() {
 suspend fun SequenceBuilder<Int>.yieldIfOdd(x: Int) {
     if (x % 2 != 0) yield(x)
 }
+
+abstract fun onCreate(savedInstanceState: Bundle?)
 // #endregion
 
 // #region control

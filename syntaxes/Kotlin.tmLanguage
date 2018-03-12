@@ -372,9 +372,9 @@
       <key>functions</key>
       <dict>
         <key>begin</key>
-        <string>(?=\s*(?:fun))</string>
+        <string>(?=\s*\b(?:fun)\b)</string>
         <key>end</key>
-        <string>}|(?=$)</string>
+        <string>(?=$|\})</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -1156,9 +1156,9 @@
       <key>variables</key>
       <dict>
         <key>begin</key>
-        <string>(?=\s*(?:var|val))</string>
+        <string>(?=\s*\b(?:var|val)\b)</string>
         <key>end</key>
-        <string>(?=:|=|$)</string>
+        <string>(?=:|=|(\b(by)\b)|$)</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -1173,7 +1173,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=:|=|$)</string>
+            <string>(?=:|=|(\b(by)\b)|$)</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -1225,6 +1225,27 @@
               <dict>
                 <key>include</key>
                 <string>#getters-and-setters</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>\b(by)\b</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.kotlin</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=$)</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#expressions</string>
               </dict>
             </array>
           </dict>
