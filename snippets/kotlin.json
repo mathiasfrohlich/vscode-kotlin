@@ -1,4 +1,11 @@
 {
+    "fun": {
+        "prefix": "fun",
+        "body": [
+            "fun ${1:name}() = ${0}"
+        ],
+        "description": "One line fucntion"
+    },
     "fun2": {
         "prefix": "fun",
         "body": [
@@ -59,5 +66,50 @@
             "\t${0}",
             "}"
         ]
+    },
+    "tryCatch": {
+        "prefix": "try",
+        "body": [
+            "try {",
+            "\t${1}",
+            "}",
+            "catch(Exception e) {",
+            "\t${0}",
+            "}"
+        ]
+    },
+    "class": {
+        "prefix": "class",
+        "body": [
+            "class ${1:name} {",
+            "\t${0}",
+            "}"
+        ],
+        "description": "Class without contructor"
+    },
+    "cclass": {
+        "prefix": "class",
+        "body": [
+            "class ${1:name}(${2:params}) {",
+            "\t${0}",
+            "}"
+        ],
+        "description": "Class with constructor"
+    },
+    "dataClass": {
+        "prefix": "class",
+        "body": [
+            "data class ${1:name}(${0})"
+        ],
+        "description": "Empty data class"
+    },
+    "singleton": {
+        "prefix": "singleton",
+        "body": [
+            "object ${1:name} {",
+            "\t${0}",
+            "}"
+        ],
+        "description": "Empty singleton"
     }
 }
