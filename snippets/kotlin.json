@@ -82,7 +82,7 @@
     "class1": {
         "prefix": "class",
         "body": [
-            "class ${1:foo}(${2:params}) {",
+            "class ${1:foo}(${2:bar}) {",
             "\t${0}",
             "}"
         ],
