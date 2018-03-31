@@ -3,29 +3,61 @@ package com.example.kotlin
 // #region imports
 import java.util.Random as Rand
 import android.support.v7.app.AppCompatActivity
-import org.amshove.kluent.`should equal`
+import org.amshove.kluent.`should equal` as Type
 // #endregion
 
 // #region main
-fun main(args: Array<String>) {
-    println("Hello Kotlin!")
+fun main(@NonNull args: Array<String>) {
+    println("Hello Kotlin! ${/*test*/}")
+
+    val map = mutableMapOf("A" to "B")
+
+    thing.apply("random string here \n\t\r")
+    thing.let { test: ->    }
+
+    val string = "${getThing()}"
 }
 // #endregion
 
 // #region variables
 val items = listOf("apple", "banana", "kiwifruit")
 var x = 9
-const var CONSTANT = 99
+const val CONSTANT = 99
+
+@get:Rule
+val activityRule = ActivityTestRule(SplashActivity::class.java)
+// #endregion
+
+// #region numeric
+val oneMillion = 1_000_000
+val creditCardNumber = 1234_5678_9012_3456L
+val socialSecurityNumber = 999_99_9999L
+val hexBytes = 0xFF_EC_DE_5E
+val float = 0.043_331F
+val bytes = 0b11010010_01101001_10010100_10010010
+// #endregion
+
+// #region conditionals
+if(test == "") {
+    1 and 2 not 3
+} else {
+    
+}
 // #endregion
 
 // #region functions
-fun foo() {
+fun <T> foo() {
     val x  = Bar::class
     val y = hello?.test
 }
 
-suspend fun SequenceBuilder<Int>.yieldIfOdd(x: Int) {
+suspend fun <T, U> SequenceBuilder<Int>.yieldIfOdd(x: Int) {
     if (x % 2 != 0) yield(x)
+}
+
+val function = fun(@Inject x: Int, y: Int, lamda: (A, B) -> Unit): Int {
+    test.test()
+    return x + y;
 }
 
 abstract fun onCreate(savedInstanceState: Bundle?)
@@ -61,7 +93,7 @@ open class Greeter: Greetable {
 
 // #region expect/actual
 expect class Foo(bar: String) {
-    fun frob()
+    fun frob() 
 }
 
 actual class Foo actual constructor(val bar: String) {
@@ -86,9 +118,18 @@ object NotANumber : Expr()
 
 // #region annotation
 @file:JvmName("Foo")
-private sealed class InjectedClass @Inject constructor() {
+private sealed class InjectedClass<T, U> @Inject constructor(val test: Int = 50, var anotherVar: String = "hello world") : SomeSuperClass(test, anotherVar) {
+
+    init {
+        //
+    }
+
+    constructor(param1: String, param2: Int): this(param1, param2) {
+        //
+    }
+
     companion object {
-        
+        //
     }
 }
 annotation class Suspendable

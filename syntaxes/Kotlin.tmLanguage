@@ -37,12 +37,37 @@
         <string>^\s*(package)\b(?:\s*([^ ;$]+)\s*)?</string>
       </dict>
       <dict>
-        <key>include</key>
-        <string>#imports</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.import.kotlin</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>storage.modifier.import.java</string>
+          </dict>
+          <key>3</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.kotlin</string>
+          </dict>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>entity.name.type</string>
+          </dict>
+        </dict>
+        <key>match</key>
+        <string>^\s*(import)\s+([^ $.]+(?:\.(?:[`][^$`]+[`]|[^` $.]+))+)(?:\s+(as)\s+([`][^$`]+[`]|[^` $.]+))?</string>
+        <key>name</key>
+        <string>meta.import.kotlin</string>
       </dict>
       <dict>
         <key>include</key>
-        <string>#statements</string>
+        <string>#code</string>
       </dict>
     </array>
     <key>repository</key>
@@ -53,7 +78,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(@[^ (]+)(\()</string>
+            <string>(@[^ (]+)(\()?</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -68,7 +93,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(\))</string>
+            <string>(\)|\s|$)</string>
             <key>endCaptures</key>
             <dict>
               <key>1</key>
@@ -100,7 +125,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#statements</string>
+                <string>#code</string>
               </dict>
               <dict>
                 <key>match</key>
@@ -118,124 +143,33 @@
           </dict>
         </array>
       </dict>
-      <key>classes</key>
+      <key>builtin-functions</key>
       <dict>
-        <key>begin</key>
-        <string>(?&lt;!::)(?=\b(?:companion|class|object|interface)\b)</string>
-        <key>end</key>
-        <string>(?=$|\})</string>
         <key>patterns</key>
         <array>
           <dict>
-            <key>include</key>
-            <string>#comments</string>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\b(companion\s*)?(class|object|interface)\b</string>
-            <key>beginCaptures</key>
+            <key>match</key>
+            <string>\b(apply|also|let|takeIf|run|takeUnless|with|println)\b\s*(?={|\()</string>
+            <key>captures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>storage.modifier.kotlin</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>storage.modifier.kotlin</string>
+                <string>support.function.kotlin</string>
               </dict>
             </dict>
-            <key>end</key>
-            <string>(?=&lt;|\{|\(|:|$)</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#comments</string>
-              </dict>
-              <dict>
-                <key>match</key>
-                <string>\w+</string>
-                <key>name</key>
-                <string>entity.name.type.class.kotlin</string>
-              </dict>
-            </array>
           </dict>
           <dict>
-            <key>begin</key>
-            <string>&lt;</string>
-            <key>end</key>
-            <string>&gt;</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#generics</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\(</string>
-            <key>end</key>
-            <string>\)</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#parameters</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>(:)</string>
-            <key>beginCaptures</key>
+            <key>match</key>
+            <string>\b(mutableListOf|listOf|mutableMapOf|mapOf|mutableSetOf|setOf)\b\s*(?={|\()</string>
+            <key>captures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.operator.declaration.kotlin</string>
+                <string>support.function.kotlin</string>
               </dict>
             </dict>
-            <key>end</key>
-            <string>(?={|$)</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>match</key>
-                <string>\w+</string>
-                <key>name</key>
-                <string>entity.other.inherited-class.kotlin</string>
-              </dict>
-              <dict>
-                <key>begin</key>
-                <string>\(</string>
-                <key>end</key>
-                <string>\)</string>
-                <key>patterns</key>
-                <array>
-                  <dict>
-                    <key>include</key>
-                    <string>#expressions</string>
-                  </dict>
-                </array>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\{</string>
-            <key>end</key>
-            <string>\}</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#statements</string>
-              </dict>
-            </array>
           </dict>
         </array>
       </dict>
@@ -256,10 +190,6 @@
             <string>/\*\*/</string>
             <key>name</key>
             <string>comment.block.empty.kotlin</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>text.html.javadoc</string>
           </dict>
           <dict>
             <key>include</key>
@@ -306,129 +236,51 @@
           </dict>
         </array>
       </dict>
-      <key>constants</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>match</key>
-            <string>\b(true|false|null|this|super)\b</string>
-            <key>name</key>
-            <string>constant.language.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\b</string>
-            <key>name</key>
-            <string>constant.numeric.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>\b([A-Z][A-Z0-9_]+)\b</string>
-            <key>name</key>
-            <string>constant.other.kotlin</string>
-          </dict>
-        </array>
-      </dict>
-      <key>expressions</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>\(</string>
-            <key>end</key>
-            <string>\)</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#expressions</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#types</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#strings</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#constants</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#comments</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#keywords</string>
-          </dict>
-        </array>
-      </dict>
-      <key>functions</key>
+      <key>class-literal</key>
       <dict>
         <key>begin</key>
-        <string>(?=\s*\b(?:fun)\b)</string>
+        <string>(?=\b(?:class|interface|object)\s+\w+)\b</string>
         <key>end</key>
-        <string>(?=$|\})</string>
+        <string>(?=\}|$)</string>
+        <key>name</key>
+        <string>meta.class.kotlin</string>
         <key>patterns</key>
         <array>
           <dict>
+            <key>include</key>
+            <string>#keyword-literal</string>
+          </dict>
+          <dict>
             <key>begin</key>
-            <string>\b(fun)\b</string>
+            <string>\b(class|object|interface)\b\s+(\w+)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.other.kotlin</string>
+                <string>storage.modifier.kotlin</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.class.kotlin</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=\()</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>begin</key>
-                <string>&lt;</string>
-                <key>end</key>
-                <string>&gt;</string>
-                <key>patterns</key>
-                <array>
-                  <dict>
-                    <key>include</key>
-                    <string>#generics</string>
-                  </dict>
-                </array>
-              </dict>
-              <dict>
-                <key>captures</key>
-                <dict>
-                  <key>2</key>
-                  <dict>
-                    <key>name</key>
-                    <string>entity.name.function.kotlin</string>
-                  </dict>
-                </dict>
-                <key>match</key>
-                <string>([\.&lt;\?&gt;\w]+\.)?(\w+)</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\(</string>
-            <key>end</key>
-            <string>\)</string>
+            <string>(?=\{|\(|:|$)</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#parameters</string>
+                <string>#keyword-literal</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#annotations</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#types</string>
               </dict>
             </array>
           </dict>
@@ -454,42 +306,88 @@
             </array>
           </dict>
           <dict>
-            <key>begin</key>
-            <string>\{</string>
-            <key>end</key>
-            <string>(?=\})</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#statements</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#braces</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#parens</string>
+          </dict>
+        </array>
+      </dict>
+      <key>literal-functions</key>
+      <dict>
+        <key>begin</key>
+        <string>(?=\b(?:fun)\b)</string>
+        <key>end</key>
+        <string>(?=$|=|\})</string>
+        <key>patterns</key>
+        <array>
+          <dict>
             <key>begin</key>
-            <string>(=)</string>
+            <string>\b(fun)\b</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.operator.assignment.kotlin</string>
+                <string>keyword.other.kotlin</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=$)</string>
+            <string>(?=\()</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>captures</key>
+                <dict>
+                  <key>2</key>
+                  <dict>
+                    <key>name</key>
+                    <string>entity.name.function.kotlin</string>
+                  </dict>
+                </dict>
+                <key>match</key>
+                <string>([\.&lt;\?&gt;\w]+\.)?(\w+|(`[^`]*`))</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#types</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>(:)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.declaration.kotlin</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?={|=|$)</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#expressions</string>
+                <string>#types</string>
               </dict>
             </array>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#parens</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#braces</string>
+          </dict>
         </array>
       </dict>
-      <key>generics</key>
+      <key>parameters</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -505,7 +403,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=,|&gt;)</string>
+            <string>(?=,|=|\))</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -515,168 +413,60 @@
             </array>
           </dict>
           <dict>
-            <key>include</key>
-            <string>#keywords</string>
-          </dict>
-          <dict>
             <key>match</key>
-            <string>\w+</string>
+            <string>\w+(?=:)</string>
             <key>name</key>
-            <string>storage.type.generic.kotlin</string>
+            <string>variable.parameter.function.kotlin</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keyword-literal</string>
           </dict>
         </array>
       </dict>
-      <key>getters-and-setters</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>\b(get)\b\s*\(\s*\)</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>entity.name.function.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>\}|(?=\bset\b)|$</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>begin</key>
-                <string>(=)</string>
-                <key>beginCaptures</key>
-                <dict>
-                  <key>1</key>
-                  <dict>
-                    <key>name</key>
-                    <string>keyword.operator.assignment.kotlin</string>
-                  </dict>
-                </dict>
-                <key>end</key>
-                <string>(?=$|\bset\b)</string>
-                <key>patterns</key>
-                <array>
-                  <dict>
-                    <key>include</key>
-                    <string>#expressions</string>
-                  </dict>
-                </array>
-              </dict>
-              <dict>
-                <key>begin</key>
-                <string>\{</string>
-                <key>end</key>
-                <string>\}</string>
-                <key>patterns</key>
-                <array>
-                  <dict>
-                    <key>include</key>
-                    <string>#expressions</string>
-                  </dict>
-                </array>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\b(set)\b\s*(?=\()</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>entity.name.function.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>\}|(?=\bget\b)|$</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>begin</key>
-                <string>\(</string>
-                <key>end</key>
-                <string>\)</string>
-                <key>patterns</key>
-                <array>
-                  <dict>
-                    <key>include</key>
-                    <string>#parameters</string>
-                  </dict>
-                </array>
-              </dict>
-              <dict>
-                <key>begin</key>
-                <string>(=)</string>
-                <key>beginCaptures</key>
-                <dict>
-                  <key>1</key>
-                  <dict>
-                    <key>name</key>
-                    <string>keyword.operator.assignment.kotlin</string>
-                  </dict>
-                </dict>
-                <key>end</key>
-                <string>(?=$|\bset\b)</string>
-                <key>patterns</key>
-                <array>
-                  <dict>
-                    <key>include</key>
-                    <string>#expressions</string>
-                  </dict>
-                </array>
-              </dict>
-              <dict>
-                <key>begin</key>
-                <string>\{</string>
-                <key>end</key>
-                <string>\}</string>
-                <key>patterns</key>
-                <array>
-                  <dict>
-                    <key>include</key>
-                    <string>#expressions</string>
-                  </dict>
-                </array>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
-      <key>imports</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.other.kotlin</string>
-              </dict>
-              <key>4</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.other.kotlin</string>
-              </dict>
-            </dict>
-            <key>match</key>
-            <string>^\s*(import)\s+[^ $.]+(\.([`][^$`]+[`]|[^` $.]+))+\s+(as)?</string>
-          </dict>
-        </array>
-      </dict>
-      <key>keywords</key>
+      <key>keyword-literal</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
             <key>match</key>
-            <string>\b(var|val|external|public|private|protected|abstract|final|sealed|enum|open|attribute|annotation|override|inline|vararg|in|out|internal|data|tailrec|operator|infix|const|yield|typealias|typeof|expect|actual|reified|suspend)\b</string>
+            <string>(\!in|\!is|as\?)</string>
+            <key>name</key>
+            <string>keyword.operator.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(in|is|as|assert)\b</string>
+            <key>name</key>
+            <string>keyword.operator.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(const)\b</string>
+            <key>name</key>
+            <string>storage.modifier.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(val|var)\b</string>
+            <key>name</key>
+            <string>storage.type.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(\_)\b</string>
+            <key>name</key>
+            <string>punctuation.definition.variable.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(data|inline|tailrec|operator|infix|typealias|typeof|expect|actual|reified|suspend)\b</string>
+            <key>name</key>
+            <string>storage.type.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(external|public|private|protected|abstract|final|sealed|enum|open|annotation|override|inline|vararg|out|internal|data|tailrec|operator|infix|yield|typealias|typeof|expect|actual|reified|suspend)\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
           </dict>
@@ -688,15 +478,33 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(if|else|while|for|do|return|when|where|break|continue)\b</string>
+            <string>\b(if|else|when)\b</string>
+            <key>name</key>
+            <string>keyword.control.conditional.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(while|for|do|return|break|continue)\b</string>
             <key>name</key>
             <string>keyword.control.kotlin</string>
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(in|is|as|assert)\b</string>
+            <string>\b(constructor|init)\b</string>
             <key>name</key>
-            <string>keyword.operator.kotlin</string>
+            <string>entity.name.function.constructor</string>
+          </dict>
+        </array>
+      </dict>
+      <key>keyword-operator</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>\b(and|or|not|inv)\b</string>
+            <key>name</key>
+            <string>keyword.operator.bitwise.kotlin</string>
           </dict>
           <dict>
             <key>match</key>
@@ -712,27 +520,9 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(::)</string>
-            <key>name</key>
-            <string>keyword.operator.reference.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(:)</string>
+            <string>(:(?!:))</string>
             <key>name</key>
             <string>keyword.operator.declaration.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(\.)</string>
-            <key>name</key>
-            <string>keyword.operator.dot.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(\?\.)</string>
-            <key>name</key>
-            <string>keyword.operator.dot.kotlin</string>
           </dict>
           <dict>
             <key>match</key>
@@ -754,13 +544,13 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(\+=|\-=|\*=|\/=)</string>
+            <string>(\+\=|\-\=|\*\=|\/\=)</string>
             <key>name</key>
             <string>keyword.operator.arithmetic.assign.kotlin</string>
           </dict>
           <dict>
             <key>match</key>
-            <string>(!|&amp;&amp;|\|\|)</string>
+            <string>(\!|\&amp;\&amp;|\|\|)</string>
             <key>name</key>
             <string>keyword.operator.logical.kotlin</string>
           </dict>
@@ -770,178 +560,90 @@
             <key>name</key>
             <string>keyword.operator.range.kotlin</string>
           </dict>
+        </array>
+      </dict>
+      <key>keyword-punctuation</key>
+      <dict>
+        <key>patterns</key>
+        <array>
           <dict>
             <key>match</key>
-            <string>(;)</string>
+            <string>(::)</string>
+            <key>name</key>
+            <string>punctuation.accessor.reference.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\?\.)</string>
+            <key>name</key>
+            <string>punctuation.accessor.dot.safe.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\.)</string>
+            <key>name</key>
+            <string>punctuation.accessor.dot.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\,)</string>
+            <key>name</key>
+            <string>punctuation.seperator.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\;)</string>
             <key>name</key>
             <string>punctuation.terminator.kotlin</string>
           </dict>
         </array>
       </dict>
-      <key>namespaces</key>
+      <key>keyword-constant</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
             <key>match</key>
-            <string>\b(namespace)\b</string>
+            <string>\b(true|false|null|class)\b</string>
             <key>name</key>
-            <string>keyword.other.kotlin</string>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\{</string>
-            <key>end</key>
-            <string>\}</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#statements</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
-      <key>parameters</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>(:)</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.operator.declaration.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>(?=,|\)|=)</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#types</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>(=)</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.operator.declaration.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>(?=,|\))</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#expressions</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#keywords</string>
+            <string>constant.language.kotlin</string>
           </dict>
           <dict>
             <key>match</key>
-            <string>\w+</string>
+            <string>\b(this|super)\b</string>
             <key>name</key>
-            <string>variable.parameter.function.kotlin</string>
+            <string>variable.language.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(0(x|X)[0-9A-Fa-f_]*)[L]?\b</string>
+            <key>name</key>
+            <string>constant.numeric.hex.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(0(b|B)[0-1_]*)[L]?\b</string>
+            <key>name</key>
+            <string>constant.numeric.binary.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b([0-9][0-9_]*\.[0-9][0-9_]*[fFL]?)\b</string>
+            <key>name</key>
+            <string>constant.numeric.float.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b([0-9][0-9_]*[fFL]?)\b</string>
+            <key>name</key>
+            <string>constant.numeric.integer.kotlin</string>
           </dict>
         </array>
       </dict>
-      <key>statements</key>
+      <key>literal-string</key>
       <dict>
         <key>patterns</key>
         <array>
-          <dict>
-            <key>include</key>
-            <string>#namespaces</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#annotations</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#typedefs</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#classes</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#functions</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#variables</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#getters-and-setters</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#expressions</string>
-          </dict>
-        </array>
-      </dict>
-      <key>strings</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>"""</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.begin.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>"""</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.end.kotlin</string>
-              </dict>
-            </dict>
-            <key>name</key>
-            <string>string.quoted.third.kotlin</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>match</key>
-                <string>(\$\w+|\$\{[^\}]+\})</string>
-                <key>name</key>
-                <string>variable.parameter.template.kotlin</string>
-              </dict>
-              <dict>
-                <key>match</key>
-                <string>\\.</string>
-                <key>name</key>
-                <string>constant.character.escape.kotlin</string>
-              </dict>
-            </array>
-          </dict>
           <dict>
             <key>begin</key>
             <string>"</string>
@@ -968,108 +670,101 @@
             <key>patterns</key>
             <array>
               <dict>
-                <key>match</key>
-                <string>(\$\w+|\$\{[^\}]+\})</string>
-                <key>name</key>
-                <string>variable.parameter.template.kotlin</string>
-              </dict>
-              <dict>
-                <key>match</key>
-                <string>\\.</string>
-                <key>name</key>
-                <string>constant.character.escape.kotlin</string>
+                <key>include</key>
+                <string>#string-content</string>
               </dict>
             </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>'</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.begin.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>'</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.end.kotlin</string>
-              </dict>
-            </dict>
-            <key>name</key>
-            <string>string.quoted.single.kotlin</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>match</key>
-                <string>\\.</string>
-                <key>name</key>
-                <string>constant.character.escape.kotlin</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>`</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.begin.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>`</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.end.kotlin</string>
-              </dict>
-            </dict>
-            <key>name</key>
-            <string>string.quoted.single.kotlin</string>
           </dict>
         </array>
       </dict>
-      <key>typedefs</key>
+      <key>literal-raw-string</key>
       <dict>
-        <key>begin</key>
-        <string>(?=\s*(?:type))</string>
-        <key>end</key>
-        <string>(?=$)</string>
         <key>patterns</key>
         <array>
           <dict>
-            <key>match</key>
-            <string>\b(type)\b</string>
-            <key>name</key>
-            <string>keyword.other.kotlin</string>
-          </dict>
-          <dict>
             <key>begin</key>
-            <string>&lt;</string>
+            <string>"""</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.begin.kotlin</string>
+              </dict>
+            </dict>
             <key>end</key>
-            <string>&gt;</string>
+            <string>"""</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.end.kotlin</string>
+              </dict>
+            </dict>
+            <key>name</key>
+            <string>string.quoted.triple.kotlin</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#generics</string>
+                <string>#string-content</string>
               </dict>
             </array>
           </dict>
+        </array>
+      </dict>
+      <key>string-content</key>
+      <dict>
+        <key>patterns</key>
+        <array>
           <dict>
-            <key>include</key>
-            <string>#expressions</string>
+            <key>name</key>
+            <string>constant.character.escape.newline.kotlin</string>
+            <key>match</key>
+            <string>\\\s*\n</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>constant.character.escape.kotlin</string>
+            <key>match</key>
+            <string>\\(x[\da-fA-F]{2}|u[\da-fA-F]{4}|.)</string>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>(\$)(\{)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.keyword.kotlin</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.section.block.begin.kotlin</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>\}</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.section.block.end.kotlin</string>
+              </dict>
+            </dict>
+            <key>name</key>
+            <string>entity.string.template.element.kotlin</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#code</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
@@ -1079,76 +774,97 @@
         <array>
           <dict>
             <key>match</key>
-            <string>\b(Nothing|Any|Unit|String|CharSequence|Int|Boolean|Char|Long|Double|Float|Short|Byte|dynamic)\b</string>
+            <string>\b(Nothing|Any|Unit|String|CharSequence|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array|List|Map|Set|dynamic)\b(\?)?</string>
             <key>name</key>
-            <string>storage.type.builtin.kotlin</string>
+            <string>support.class.kotlin</string>
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray)\b</string>
+            <string>\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray)\b(\?)?</string>
             <key>name</key>
-            <string>storage.type.builtin.array.kotlin</string>
+            <string>support.class.kotlin</string>
           </dict>
           <dict>
-            <key>begin</key>
-            <string>\b(Array|List|Map)&lt;\b</string>
-            <key>beginCaptures</key>
+            <key>match</key>
+            <string>((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)</string>
+            <key>name</key>
+            <string>entity.name.type.class</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#keyword-punctuation</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#types</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(?:[a-z]\w*(\.))*[A-Z]+\w*\b</string>
+            <key>captures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>storage.type.builtin.collection.kotlin</string>
+                <string>keyword.operator.dereference.kotlin</string>
+              </dict>
+            </dict>
+            <key>name</key>
+            <string>storage.type.kotlin</string>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>\&lt;</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.generic.begin</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>&gt;</string>
+            <string>\&gt;</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.generic.end</string>
+              </dict>
+            </dict>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
                 <string>#types</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#keywords</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\w+&lt;</string>
-            <key>end</key>
-            <string>&gt;</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#types</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#keywords</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\{</string>
-            <key>end</key>
-            <string>\}</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#statements</string>
               </dict>
             </array>
           </dict>
           <dict>
             <key>begin</key>
             <string>\(</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.section.group.begin.kotlin</string>
+              </dict>
+            </dict>
             <key>end</key>
             <string>\)</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.section.group.end.kotlin</string>
+              </dict>
+            </dict>
             <key>patterns</key>
             <array>
               <dict>
@@ -1158,133 +874,205 @@
             </array>
           </dict>
           <dict>
-            <key>match</key>
-            <string>(-&gt;)</string>
-            <key>name</key>
-            <string>keyword.operator.declaration.kotlin</string>
+            <key>include</key>
+            <string>#keyword-punctuation</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keyword-operator</string>
           </dict>
         </array>
       </dict>
-      <key>variables</key>
+      <key>parens</key>
       <dict>
-        <key>begin</key>
-        <string>(?=\s*\b(?:var|val)\b)</string>
-        <key>end</key>
-        <string>(?=:|=|(\b(by)\b)|$)</string>
         <key>patterns</key>
         <array>
           <dict>
             <key>begin</key>
-            <string>\b(var|val)\b</string>
+            <string>\(</string>
             <key>beginCaptures</key>
             <dict>
-              <key>1</key>
+              <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.other.kotlin</string>
+                <string>punctuation.section.group.begin.kotlin</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=:|=|(\b(by)\b)|$)</string>
+            <string>\)</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.section.group.end.kotlin</string>
+              </dict>
+            </dict>
+            <key>name</key>
+            <string>meta.group.kotlin</string>
             <key>patterns</key>
             <array>
               <dict>
-                <key>begin</key>
-                <string>&lt;</string>
-                <key>end</key>
-                <string>&gt;</string>
-                <key>patterns</key>
-                <array>
-                  <dict>
-                    <key>include</key>
-                    <string>#generics</string>
-                  </dict>
-                </array>
+                <key>include</key>
+                <string>#keyword-punctuation</string>
               </dict>
               <dict>
-                <key>captures</key>
-                <dict>
-                  <key>2</key>
-                  <dict>
-                    <key>name</key>
-                    <string>entity.name.variable.kotlin</string>
-                  </dict>
-                </dict>
-                <key>match</key>
-                <string>([\.&lt;\?&gt;\w]+\.)?(\w+)</string>
+                <key>include</key>
+                <string>#parameters</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#code</string>
               </dict>
             </array>
           </dict>
+        </array>
+      </dict>
+      <key>braces</key>
+      <dict>
+        <key>patterns</key>
+        <array>
           <dict>
             <key>begin</key>
-            <string>(:)</string>
+            <string>\{</string>
             <key>beginCaptures</key>
             <dict>
-              <key>1</key>
+              <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.operator.declaration.kotlin</string>
+                <string>punctuation.section.group.begin.kotlin</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>(?==|$)</string>
+            <string>\}</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.section.group.end.kotlin</string>
+              </dict>
+            </dict>
+            <key>name</key>
+            <string>meta.block.kotlin</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#types</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#getters-and-setters</string>
+                <string>#code</string>
               </dict>
             </array>
           </dict>
+        </array>
+      </dict>
+      <key>brackets</key>
+      <dict>
+        <key>patterns</key>
+        <array>
           <dict>
             <key>begin</key>
-            <string>\b(by)\b</string>
+            <string>\[</string>
             <key>beginCaptures</key>
             <dict>
-              <key>1</key>
+              <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.other.kotlin</string>
+                <string>punctuation.section.brackets.begin.kotlin</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=$)</string>
+            <string>\]</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.section.brackets.end.kotlin</string>
+              </dict>
+            </dict>
+            <key>name</key>
+            <string>meta.brackets.kotlin</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#expressions</string>
+                <string>#code</string>
               </dict>
             </array>
           </dict>
+        </array>
+      </dict>
+      <key>code</key>
+      <dict>
+        <key>patterns</key>
+        <array>
           <dict>
-            <key>begin</key>
-            <string>(=)</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.operator.assignment.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>(?=$)</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#expressions</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#getters-and-setters</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments-inline</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#annotations</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#class-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#parens</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#braces</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#brackets</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keyword-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#types</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keyword-operator</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keyword-constant</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keyword-punctuation</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#builtin-functions</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#literal-functions</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#builtin-classes</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#literal-raw-string</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#literal-string</string>
           </dict>
         </array>
       </dict>
