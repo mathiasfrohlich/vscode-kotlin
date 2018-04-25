@@ -70,7 +70,7 @@ println(numbers.filter(::isOdd))
 // #endregion
 
 // #region control
-fun foo(node: Node): String? {
+fun foo(node: Node?): String? {
     val parent = node.getParent() ?: return null
 }
 // #endregion

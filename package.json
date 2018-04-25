@@ -57,12 +57,12 @@
 		"grammars": [
 			{
 				"language": "kotlin",
-				"scopeName": "source.Kotlin",
+				"scopeName": "source.kotlin",
 				"path": "./syntaxes/Kotlin.tmLanguage"
 			},
 			{
 				"language": "kotlinscript",
-				"scopeName": "source.Kotlin",
+				"scopeName": "source.kotlin",
 				"path": "./syntaxes/Kotlin.tmLanguage"
 			},
 			{
@@ -78,6 +78,10 @@
 		],"snippets": [
         {
             "language": "kotlin",
+            "path": "./snippets/kotlin.json"
+		},
+		{
+            "language": "kotlinscript",
             "path": "./snippets/kotlin.json"
         }
     ]

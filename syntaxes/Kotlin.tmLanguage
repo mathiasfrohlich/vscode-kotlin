@@ -286,13 +286,18 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(:)</string>
+            <string>(:)\s*(\w+)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
                 <string>keyword.operator.declaration.kotlin</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>entity.other.inherited-class.kotlin</string>
               </dict>
             </dict>
             <key>end</key>
@@ -460,13 +465,13 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(data|inline|tailrec|operator|infix|typealias|typeof|expect|actual|reified|suspend)\b</string>
+            <string>\b(data|inline|tailrec|operator|infix|typealias|reified)\b</string>
             <key>name</key>
             <string>storage.type.kotlin</string>
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(external|public|private|protected|abstract|final|sealed|enum|open|annotation|override|inline|vararg|out|internal|data|tailrec|operator|infix|yield|typealias|typeof|expect|actual|reified|suspend)\b</string>
+            <string>\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend|yield)\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
           </dict>
@@ -493,6 +498,12 @@
             <string>\b(constructor|init)\b</string>
             <key>name</key>
             <string>entity.name.function.constructor</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(companion|object)\b</string>
+            <key>name</key>
+            <string>storage.type.kotlin</string>
           </dict>
         </array>
       </dict>
@@ -788,7 +799,7 @@
             <key>match</key>
             <string>((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)</string>
             <key>name</key>
-            <string>entity.name.type.class</string>
+            <string>entity.name.type.class.kotlin</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -813,7 +824,7 @@
               </dict>
             </dict>
             <key>name</key>
-            <string>storage.type.kotlin</string>
+            <string>entity.name.type.class.kotlin</string>
           </dict>
           <dict>
             <key>begin</key>
@@ -823,7 +834,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.generic.begin</string>
+                <string>punctuation.definition.generic.begin.kotlin</string>
               </dict>
             </dict>
             <key>end</key>
@@ -833,11 +844,19 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.generic.end</string>
+                <string>punctuation.definition.generic.end.kotlin</string>
               </dict>
             </dict>
+            <key>name</key>
+            <string>meta.generic.kotlin</string>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>match</key>
+                <string>\b(out|in)\b</string>
+                <key>name</key>
+                <string>storage.modifier.kotlin</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#types</string>
@@ -1078,8 +1097,8 @@
       </dict>
     </dict>
     <key>scopeName</key>
-    <string>source.Kotlin</string>
+    <string>source.kotlin</string>
     <key>uuid</key>
-    <string>d508c059-a938-4779-b2bc-ff43a5078907</string>
+    <string>d9380650-5edc-447d-8dbd-98838c7d0adf</string>
   </dict>
 </plist>
