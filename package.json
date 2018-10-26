@@ -2,7 +2,7 @@
 	"name": "Kotlin",
 	"displayName": "Kotlin Language",
 	"description": "Kotlin language support for VS Code",
-	"version": "1.6.0",
+	"version": "1.7.0",
 	"publisher": "mathiasfrohlich",
 	"license": "Apache-2.0",
 	"scripts": {
@@ -13,7 +13,7 @@
 	},
 	"icon": "artwork/icon.png",
 	"categories": [
-		"Languages"
+		"Programming Languages"
 	],
 	"bugs": {
 		"url": "https://github.com/mathiasfrohlich/vscode-kotlin/issues"
@@ -75,16 +75,17 @@
 					"meta.embedded.block.kotlin": "kotlin"
 				}
 			}
-		],"snippets": [
-        {
-            "language": "kotlin",
-            "path": "./snippets/kotlin.json"
-		},
-		{
-            "language": "kotlinscript",
-            "path": "./snippets/kotlin.json"
-        }
-    ]
+		],
+		"snippets": [
+			{
+				"language": "kotlin",
+				"path": "./snippets/kotlin.json"
+			},
+			{
+				"language": "kotlinscript",
+				"path": "./snippets/kotlin.json"
+			}
+		]
 	},
 	"devDependencies": {
 		"vsce": "^1.36.2",

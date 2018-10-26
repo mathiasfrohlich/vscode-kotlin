@@ -137,3 +137,18 @@ val f = @Suspendable { Fiber.sleep(10) }
 // #endregion
 
 
+private data class Foo(
+    /**
+     * ```
+     * ($)
+     * ```
+     */
+    val variables: Map<String, String>
+)
+
+data class Response(@SerializedName("param1") val param1: String,
+                    @SerializedName("param2") val param2: String,
+                    @SerializedName("param3") val param3: String) {
+}
+
+
