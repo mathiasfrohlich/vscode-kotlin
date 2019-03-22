@@ -66,7 +66,7 @@
 				"path": "./syntaxes/Kotlin.tmLanguage"
 			},
 			{
-				"scopeName": "markdown.Kotlin.codeblock",
+				"scopeName": "markdown.kotlin.codeblock",
 				"path": "./syntaxes/codeblock.json",
 				"injectTo": [
 					"text.html.markdown"
