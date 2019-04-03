@@ -149,7 +149,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>\b(apply|also|let|takeIf|run|takeUnless|with|println)\b\s*(?={|\()</string>
+            <string>\b(apply|also|let|takeIf|run|takeUnless|with|print|println)\b\s*(?={|\()</string>
             <key>captures</key>
             <dict>
               <key>1</key>
