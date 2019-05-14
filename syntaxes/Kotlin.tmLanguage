@@ -471,7 +471,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend|yield)\b</string>
+            <string>\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend|yield|out|in)\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
           </dict>
@@ -825,43 +825,6 @@
             </dict>
             <key>name</key>
             <string>entity.name.type.class.kotlin</string>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\&lt;</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.generic.begin.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>\&gt;</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.generic.end.kotlin</string>
-              </dict>
-            </dict>
-            <key>name</key>
-            <string>meta.generic.kotlin</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>match</key>
-                <string>\b(out|in)\b</string>
-                <key>name</key>
-                <string>storage.modifier.kotlin</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#types</string>
-              </dict>
-            </array>
           </dict>
           <dict>
             <key>begin</key>
