@@ -1,107 +1,118 @@
 {
-    "fun": {
+    "Create_One_Line_Function": {
         "prefix": "fun",
-        "body": [
-            "fun ${1:foo}() = ${0}"
-        ],
-        "description": "One line fucntion"
+        "body": "fun ${1:name}(${2:params}) = $0",
+        "description": "Create a one line function."
     },
-    "fun2": {
-        "prefix": "fun",
+    "Create_Function_with_One_Parameter": {
+        "prefix": "fun1",
         "body": [
-            "fun ${1:foo}(${2:bar}: ${3:Any}, ${4:baz}: ${5:Any}): ${6:Unit} {",
+            "fun ${1:name}(${2:param}: ${3:type}): ${4:Unit} {",
             "\t${0}",
             "}"
         ],
-        "description": "Function with 2 parameters"
+        "description": "Create a function with one parameter."
     },
-    "fun1": {
-        "prefix": "fun",
+    "Create a function with two parameters": {
+        "prefix": "fun2",
         "body": [
-            "fun ${1:foo}(${2:bar}: ${3:Any}): ${4:Unit} {",
+            "fun ${1:name}(${2:param}: ${3:type}, ${4:param}: ${5:type}): ${6:Unit} {",
             "\t${0}",
             "}"
         ],
-        "description": "Function with 1 parameter"
+        "description": "Create a function with two parameters."
     },
-    "fun0": {
-        "prefix": "fun",
+    "Create a function with no parameters": {
+        "prefix": "fun0",
         "body": [
-            "fun ${1:foo}(): Unit {",
+            "fun ${1:name}(): ${2:Unit} {",
             "\t${0}",
             "}"
         ],
-        "description": "Function with 0 parameters"
+        "description": "Create a function with no parameters."
     },
-    "void": {
+    "Create_Void_Function": {
         "prefix": "void",
         "body": [
-            "fun ${1:foo}() {",
+            "fun ${1:name}() {",
             "\t${0}",
             "}"
         ],
-        "description": "Function that returns nothing"
+        "description": "Create a function that returns nothing."
     },
-    "main": {
+    "Create_Function_with_Many_Parameters": {
+        "prefix": "funx",
+        "body": [
+            "fun ${1:name}(${2:args}): ${3:Unit} {",
+            "\t$0",
+            "}"
+        ],
+        "description":
+            "Create a function with an arbitrary number of parameters."
+    },
+    "Create_Main_Function": {
         "prefix": "main",
         "body": [
             "fun main(args: Array<String>) {",
             "\t${0}",
             "}"
         ],
-        "description": "main() function"
+        "description": "Create main() function."
     },
-    "for": {
+    "Create_For_Loop": {
         "prefix": "for",
         "body": [
             "for (${1:i} in ${2:iterable}) {",
             "\t${0}",
             "}"
-        ]
+        ],
+        "description": "Create a for loop."
     },
-    "try": {
+    "Create_Try_Catch_Block": {
         "prefix": "try",
         "body": [
             "try {",
-            "\t${0}",
+            "\t$1",
             "}",
-            "catch(Exception e) {",
-            "\t${0}",
-            "}"
-        ]
-    },
-    "class": {
-        "prefix": "class",
-        "body": [
-            "class ${1:foo} {",
-            "\t${0}",
+            "catch(${2:Exception} e) {",
+            "\t$3",
             "}"
         ],
-        "description": "Class without contructor"
+        "description": "Create a try-catch block."
     },
-    "class1": {
+    "Create_Class_Without_Constructor": {
         "prefix": "class",
         "body": [
-            "class ${1:foo}(${2:bar}) {",
+            "class ${1:name} {",
             "\t${0}",
             "}"
         ],
-        "description": "Class with constructor"
+        "description": "Create a class without a constructor."
     },
-    "data": {
-        "prefix": "class",
+    "Create_Class_with_Constructor": {
+        "prefix": "cclass",
         "body": [
-            "data class ${1:foo}(${0})"
+            "class ${1:name}(${2:args}) {",
+            "\t${0}",
+            "}"
         ],
-        "description": "Empty data class"
+        "description": "Create a class with a constructor."
     },
-    "singleton": {
+    "Create_Data_Class": {
+        "prefix": "data",
+        "body": [
+            "data class ${1:name}(${2:params})",
+            "\n$0"
+        ],
+        "description": "Create a data class."
+    },
+    "Create_Singleton": {
         "prefix": "singleton",
         "body": [
-            "object ${1:foo} {",
+            "object ${1:name} {",
             "\t${0}",
             "}"
         ],
-        "description": "Empty singleton"
+        "description": "Create an empty singleton."
     }
 }
