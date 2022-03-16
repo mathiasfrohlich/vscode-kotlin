@@ -1046,10 +1046,6 @@
           </dict>
           <dict>
             <key>include</key>
-            <string>#builtin-classes</string>
-          </dict>
-          <dict>
-            <key>include</key>
             <string>#literal-raw-string</string>
           </dict>
           <dict>
